@@ -1,6 +1,6 @@
-.idea
+.idea/
 .vscode
-
+/unpackage/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Windows template
@@ -163,4 +163,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/unpackage/
+
