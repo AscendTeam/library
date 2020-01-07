@@ -62,24 +62,24 @@
 		height: 100%;
 		.topBar
 			width: 90%;
-			height: 147px;
+			height: 294upx;
 			background-color: #F8F9FB
 			margin-left 5%
-			border-radius 15px
-			margin-top 20px
-			border 1px solid #DEE0E2
+			border-radius 30upx
+			margin-top 40upx
+			border 2upx solid #DEE0E2
 			.userName
 				position: relative;
 				width: 90%;
 				height: 50%;
 				margin-left 5%
-				border-bottom 1px solid #DEE0E2
+				border-bottom 2upx solid #DEE0E2
 				image
 					position: absolute;
-					width: 43px;
-					height: 43px;
+					width: 86upx;
+					height: 86upx;
 					border-radius 50%
-					right 1px
+					right 2upx
 					top 50%
 					transform translateY(-50%)
 				span
@@ -93,7 +93,7 @@
 				margin-left 5%
 				.text
 					position: absolute;
-					font-size 12px
+					font-size 24upx
 					top 50%
 					transform translateY(-50%)
 					.second
@@ -101,34 +101,34 @@
 		.bookCard
 			width: 90%;
 			margin-left 5%
-			margin-top: 17px;
-			border-radius 35px
+			margin-top: 34upx;
+			border-radius 70upx
 			outline none
 			background-color: #5D5F66;
 			button
-				border-radius 35px
+				border-radius 70upx
 				outline none
 				background-color: #5D5F66;
 				span
 					color white
-					font-size 12px
+					font-size 24upx
 				.right
 					color white
-					font-size 12px
-					margin-left: 115px
+					font-size 24upx
+					margin-left: 230upx
 		.book
 			width: 90%;
 			margin-left 5%
-			padding-top: 35px;
+			padding-top: 70upx;
 			.addBook
-				width: 94px;
-				height: 136px;
-				border 1px solid #DEE0E2
+				width: 188upx;
+				height: 272upx;
+				border 2upx solid #DEE0E2
 				.add
 					color #5D5F66
 					text-align center
 					vertical-align middle
-					line-height: 136px;
+					line-height: 272upx;
 </style>
 			
 			
