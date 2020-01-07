@@ -5,11 +5,11 @@
 		<hr>
 		<Recommend/>
 	</div>
-	
+
 </template>
 
 <script>
-	
+
 	import Recommend from '../../components/recommend/recommend.vue'
 	import Category from '../../components/category/category.vue'
 	export default {
@@ -17,7 +17,7 @@
 			Recommend,
 			Category
 		},
-	
+
 
 	}
 </script>

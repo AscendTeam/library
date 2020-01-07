@@ -1,10 +1,11 @@
 {
-	"pages": [ 
-		{
-			"path": "pages/index/index"
-		},
+	"pages": [
+
+
 		{
 			"path": "pages/search/index"
+		},{
+			"path": "pages/index/index"
 		},{
 			"path" : "pages/video/index"
 		},
@@ -14,11 +15,17 @@
 		{
 			"path" : "pages/index1"
 		},
+        {
+          "path":"pages/login/index"
+        },
+        {
+          "path":"comments/rank"
+        },
 		{
 			"path" : "pages/seeMore/seeMore",
 			"style":{
 					"navigationBarBackgroundColor": "#F75B6A",
-					"navigationBarTitleText": "飙升"				
+					"navigationBarTitleText": "飙升"
 							}
 		}
 	],
