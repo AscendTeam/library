@@ -37,9 +37,9 @@
 		},
 		methods:{
 			getuserinfo(res){
-			console.log(res)
+			// console.log(res)
 			this.userInfo = res.mp.detail.userInfo
-			console.log(this.userInfo)
+			// console.log(this.userInfo)
 			},
 		},
 		mounted() {

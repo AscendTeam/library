@@ -1,6 +1,6 @@
 <template>
 	<div class="liang_categoryContianer"> 
-		<div class="listItem" v-for='(item, index) in rankList' :key='index'>
+		<div class="listItem" v-for='(item, index) in rankList' :key='index' @click="todetail">
 			<div class="left">
 				<span class="title">{{rankList[index].bookInfo.category}}</span>
 				<ol class="item">
@@ -9,7 +9,7 @@
 					<li>3. {{rankList[2].bookInfo.title}}</li>
 				</ol>
 			</div>
-			<img :src="rankList[index].bookInfo.cover" alt="">
+			<img :src="rankList[index].bookInfo.cover">
 		</div>
 	</div>
 </template>
@@ -27,6 +27,16 @@
 			// console.log(result)
 			this.rankList = result.books
 			//this.booksList = result.data.recommendationBookList
+		},
+		methods:{
+			todetail(){
+				uni.navigateTo({
+					url:'/pages/details/index',
+					fail(err){
+						console.log(err)
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -38,10 +48,10 @@
 		background #fff
 		.listItem
 			display flex
-			width 700upx
-			height 280upx
+			width 670upx
+			height 300upx
 			background #F8F8FA
-			border-radius 8%
+			border-radius 20rpx
 			margin-top 40upx
 			justify-content space-between
 			
@@ -50,7 +60,7 @@
 				.title
 					font-size 36upx
 				.item
-					color #A5AAB2
+					color #878E98
 					font-size 30upx
 					>li
 						margin-top 20upx
@@ -58,6 +68,6 @@
 			img 
 				width 188upx
 				height 270upx
-				border-radius 5%
+				border-radius 0 20upx 20upx 0 
 				
 </style>
