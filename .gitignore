@@ -1,5 +1,9 @@
-.idea
+.idea/
 .vscode
+<<<<<<< HEAD
+=======
+/unpackage/
+>>>>>>> 6176d5bbc3cd7de47fd660b7d7f174ca3bb9205c
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Windows template
@@ -161,4 +165,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
 

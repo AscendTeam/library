@@ -8,6 +8,8 @@
 			"path":"comments/rank"
 		},
 		{
+			"path": "pages/search/index"
+		},{
 			"path": "pages/index/index"
 			
 		},
@@ -35,8 +37,8 @@
 			}, {
 				"pagePath": "pages/video/index",
 				"text": "视频",
-				"iconPath": "/static/imgs/todo.png",
-				"selectedIconPath": "/static/imgs/todo-active.png"
+				"iconPath": "/static/imgs/play.png",
+				"selectedIconPath": "/static/imgs/play-active.png"
     }]
   }
 }
