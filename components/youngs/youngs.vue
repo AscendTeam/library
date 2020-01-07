@@ -56,7 +56,9 @@
 			margin 5upx 20upx
 		.titleContent
 			margin 50upx 10upx
+			width 300upx
 			.contentHader
+			
 				font-size 32upx
 				margin 20upx 0upx
 			.contentText

@@ -11,8 +11,6 @@
       },{
 				"path":"pages/details/index"
 			},{
-        "path":"pages/books/index"
-      },{
 				"path":"pages/bookpack/index"
 			},{
         "path":"pages/login/index"
