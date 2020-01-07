@@ -1,6 +1,11 @@
 {
 	"pages": [
-        {
+		
+		{
+				"path" : "components/speech/speech"
+		},{
+				"path" : "components/youngs/youngs"
+		},{
 			"path": "pages/index/index"
 		},{
 			"path":"pages/launch/index"
@@ -19,6 +24,7 @@
 					"navigationBarTitleText": "飙升"
 			}
 		}
+		
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
