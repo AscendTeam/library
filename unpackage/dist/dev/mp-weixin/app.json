@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/video/index"
+    "pages/video/index",
+    "pages/bookpack/index"
   ],
   "subPackages": [],
   "window": {
@@ -30,6 +31,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap38.json"
+  "usingComponents": {}
 }

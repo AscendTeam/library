@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ranking": "/components/ranking/Ranking",
+    "classify": "/components/classify/classify",
+    "motivational": "/components/motivational/motivational",
+    "stuye": "/components/stuye/stuye",
+    "index-header": "/components/recommend/recommend"
+  }
 }
