@@ -1,28 +1,31 @@
 <template>
-	<div class="content" @click="todetail">
-		<div class="text">点击</div>
-	</div>
+	<view>
+		<Searchbar></Searchbar>
+		微信读书
+		<view class="y_tabbar_container">
+			<Tabbar></Tabbar>
+		</view>
+
+		<Category/>
+		<hr>
+		<Recommend/>
+	</view>
 </template>
 
 <script>
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	import Tabbar from '../../components/tabbar/tabbar.vue'
+
+
 	export default{
-		methods:{
-			todetail(){
-				console.log('------')
-				uni.navigateTo({
-					url:'/pages/details/index',
-					fail(err){
-						console.log(err)
-					}
-				})
-			}
+		components:{
+			Searchbar,
+			Tabbar,
 		}
-	}	
-</script>		
+
+	}
+</script>
+
 <style lang="stylus">
-.content
-	.text
-		width 200upx
-		height 200upx
-		background-color #007AFF
+
 </style>

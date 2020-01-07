@@ -1,7 +1,7 @@
 {
     "name" : "微信读书",
-    "appid" : "__UNI__EAB0631",
-    "description" : "读书应用型app",
+    "appid" : "",
+    "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -50,10 +50,10 @@
     "mp-weixin" : {
         "appid" : "wx58262e72d6b2d3ec",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true
         },
-        "usingComponents" : true,
-        "permission" : {}
+        "usingComponents" : true
     },
     "mp-alipay" : {
         "usingComponents" : true

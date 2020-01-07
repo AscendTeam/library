@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view>
 		视频页面
 	</view>
 </template>
@@ -10,6 +10,6 @@
 	}
 </script>
 
-<style>
+<style lang="stylus">
 
 </style>
