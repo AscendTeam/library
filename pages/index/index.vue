@@ -1,27 +1,31 @@
 <template>
-	<div class="indexContainer">
-		微信读书11111
+	<view>
+		<Searchbar></Searchbar>
+		微信读书
+		<view class="y_tabbar_container">
+			<Tabbar></Tabbar>
+		</view>
+		
 		<Category/>
 		<hr>
 		<Recommend/>
-	</div>
-
+	</view>
 </template>
 
 <script>
-
-	import Recommend from '../../components/recommend/recommend.vue'
-	import Category from '../../components/category/category.vue'
-	export default {
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	import Tabbar from '../../components/tabbar/tabbar.vue'
+	
+	
+	export default{
 		components:{
-			Recommend,
-			Category
-		},
-
+			Searchbar,
+			Tabbar,
+		}
 
 	}
 </script>
 
-<style>
-	
+<style lang="stylus">
+
 </style>
