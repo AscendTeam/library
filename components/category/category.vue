@@ -1,16 +1,140 @@
 <template>
 	<div class="liang_categoryContianer"> 
-		<div class="listItem" v-for='(item, index) in rankList' :key='index' @click="todetail">
+		<div class="listItem"  @click="todetail">
 			<div class="left">
-				<span class="title">{{rankList[index].bookInfo.category}}</span>
+				<span class="title">{{rankList[0].bookInfo.category}}</span>
 				<ol class="item">
 					<li>1. {{rankList[0].bookInfo.title}}</li>
 					<li>2. {{rankList[1].bookInfo.title}}</li>
 					<li>3. {{rankList[2].bookInfo.title}}</li>
 				</ol>
 			</div>
-			<img :src="rankList[index].bookInfo.cover">
+			<img :src="rankList[0].bookInfo.cover">
 		</div>
+		<div class="listItem"  @click="todetail">
+			<div class="left">
+				<span class="title">{{rankList1[0].bookInfo.category}}</span>
+				<ol class="item">
+					<li>1. {{rankList1[0].bookInfo.title}}</li>
+					<li>2. {{rankList1[1].bookInfo.title}}</li>
+					<li>3. {{rankList1[2].bookInfo.title}}</li>
+				</ol>
+			</div>
+			<img :src="rankList[1].bookInfo.cover">
+		</div>
+		<div class="listItem"  @click="todetail">
+			<div class="left">
+				<span class="title">{{rankList2[0].bookInfo.category}}</span>
+				<ol class="item">
+					<li>1. {{rankList2[0].bookInfo.title}}</li>
+					<li>2. {{rankList2[1].bookInfo.title}}</li>
+					<li>3. {{rankList2[2].bookInfo.title}}</li>
+				</ol>
+			</div>
+			<img :src="rankList[2].bookInfo.cover">
+		</div>
+		<div class="listItem"  @click="todetail">
+				<div class="left">
+					<span class="title">{{rankList[0].bookInfo.category}}</span>
+					<ol class="item">
+						<li>1. {{rankList[0].bookInfo.title}}</li>
+						<li>2. {{rankList[1].bookInfo.title}}</li>
+						<li>3. {{rankList[2].bookInfo.title}}</li>
+					</ol>
+				</div>
+				<img :src="rankList[0].bookInfo.cover">
+			</div>
+			<div class="listItem"  @click="todetail">
+				<div class="left">
+					<span class="title">{{rankList1[0].bookInfo.category}}</span>
+					<ol class="item">
+						<li>1. {{rankList1[0].bookInfo.title}}</li>
+						<li>2. {{rankList1[1].bookInfo.title}}</li>
+						<li>3. {{rankList1[2].bookInfo.title}}</li>
+					</ol>
+				</div>
+				<img :src="rankList[1].bookInfo.cover">
+			</div>
+			<div class="listItem"  @click="todetail">
+				<div class="left">
+					<span class="title">{{rankList2[0].bookInfo.category}}</span>
+					<ol class="item">
+						<li>1. {{rankList2[0].bookInfo.title}}</li>
+						<li>2. {{rankList2[1].bookInfo.title}}</li>
+						<li>3. {{rankList2[2].bookInfo.title}}</li>
+					</ol>
+				</div>
+				<img :src="rankList[2].bookInfo.cover">
+			</div>
+			<div class="listItem"  @click="todetail">
+					<div class="left">
+						<span class="title">{{rankList[0].bookInfo.category}}</span>
+						<ol class="item">
+							<li>1. {{rankList[0].bookInfo.title}}</li>
+							<li>2. {{rankList[1].bookInfo.title}}</li>
+							<li>3. {{rankList[2].bookInfo.title}}</li>
+						</ol>
+					</div>
+					<img :src="rankList[0].bookInfo.cover">
+				</div>
+				<div class="listItem"  @click="todetail">
+					<div class="left">
+						<span class="title">{{rankList1[0].bookInfo.category}}</span>
+						<ol class="item">
+							<li>1. {{rankList1[0].bookInfo.title}}</li>
+							<li>2. {{rankList1[1].bookInfo.title}}</li>
+							<li>3. {{rankList1[2].bookInfo.title}}</li>
+						</ol>
+					</div>
+					<img :src="rankList[1].bookInfo.cover">
+				</div>
+				<div class="listItem"  @click="todetail">
+					<div class="left">
+						<span class="title">{{rankList2[0].bookInfo.category}}</span>
+						<ol class="item">
+							<li>1. {{rankList2[0].bookInfo.title}}</li>
+							<li>2. {{rankList2[1].bookInfo.title}}</li>
+							<li>3. {{rankList2[2].bookInfo.title}}</li>
+						</ol>
+					</div>
+					<img :src="rankList[2].bookInfo.cover">
+				</div>
+				<div class="listItem"  @click="todetail">
+						<div class="left">
+							<span class="title">{{rankList[0].bookInfo.category}}</span>
+							<ol class="item">
+								<li>1. {{rankList[0].bookInfo.title}}</li>
+								<li>2. {{rankList[1].bookInfo.title}}</li>
+								<li>3. {{rankList[2].bookInfo.title}}</li>
+							</ol>
+						</div>
+						<img :src="rankList[0].bookInfo.cover">
+					</div>
+					<div class="listItem"  @click="todetail">
+						<div class="left">
+							<span class="title">{{rankList1[0].bookInfo.category}}</span>
+							<ol class="item">
+								<li>1. {{rankList1[0].bookInfo.title}}</li>
+								<li>2. {{rankList1[1].bookInfo.title}}</li>
+								<li>3. {{rankList1[2].bookInfo.title}}</li>
+							</ol>
+						</div>
+						<img :src="rankList[1].bookInfo.cover">
+					</div>
+					<div class="listItem"  @click="todetail">
+						<div class="left">
+							<span class="title">{{rankList2[0].bookInfo.category}}</span>
+							<ol class="item">
+								<li>1. {{rankList2[0].bookInfo.title}}</li>
+								<li>2. {{rankList2[1].bookInfo.title}}</li>
+								<li>3. {{rankList2[2].bookInfo.title}}</li>
+							</ol>
+						</div>
+						<img :src="rankList[2].bookInfo.cover">
+					</div>
+				
+			
+		
 	</div>
 </template>
 
@@ -19,13 +143,21 @@
 	export default{
 		data(){
 			return{
-				rankList:[]
+				rankList:[],
+				rankList1:[],
+				rankList2:[]
+				
 			}
 		},
 		async mounted(){
 			let result = await request('/getListXY')
+			let result1 = await request('/getListYS')
+			let result2 = await request('/getListLZ')
+			
 			// console.log(result)
 			this.rankList = result.books
+			this.rankList1 = result1.books
+			this.rankList2 = result2.books
 			//this.booksList = result.data.recommendationBookList
 		},
 		methods:{
