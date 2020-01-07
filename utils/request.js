@@ -1,5 +1,5 @@
 import config from './config.js'
-export default function(url,data={},method='GET'){
+export function request (url,data={},method='GET'){
 	return new Promise((resolve,reject)=>{
 		uni.request({
 			url: config.host + url,

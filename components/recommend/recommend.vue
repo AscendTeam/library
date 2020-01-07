@@ -1,7 +1,7 @@
 <template>
 	<div class="liang_recommendContainer">
 		<div class="recommendList" v-for='(item, index) in booksList.data.recommendationBookList' :key='index'>
-			<div class="listItem" @click="toDetail">
+			<div class="listItem" @click="toDetail(index)">
 				<img class="booksImg" :src="item.cover" alt="">
 				<div class="right">
 					<span class="title">{{item.title}}</span>

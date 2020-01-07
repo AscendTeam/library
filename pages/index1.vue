@@ -52,7 +52,7 @@
 		methods:{
 			toMore(){
 				console.log('aaaa')
-				wx.navigateTo({
+				uin.navigateTo({
 					url:'/pages/seeMore/seeMore'
 				})
 			}
