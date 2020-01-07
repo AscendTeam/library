@@ -1,5 +1,14 @@
 <template>
 	<div>
+        <Searchbar></Searchbar>
+        微信读书
+        <view class="y_tabbar_container">
+            <Tabbar></Tabbar>
+        </view>
+
+        <Category/>
+        <hr>
+        <Recommend/>
 		<div class="indexContainer">
 			<div class="searchContainer">
 				<i class="iconfont iconRectangleCopy"></i>
@@ -33,9 +42,9 @@
 				</ul>
 				<Recommend v-if='navIndex=== 0'/>
 				<Classify v-if='navIndex=== 1'/>
-			</scroll-view>	
+			</scroll-view>
 	  </div>
-	</div>	
+	</div>
 </template>
 
 <script>
@@ -50,13 +59,15 @@
 			Ranking,
 			Classify,
 			Motivational,
+            Searchbar,
+            Tabbar,
 			Stuye,
 			IndexHeader:Recommend
 		},
 		data(){
 			return{
 				navList:[
-					
+
 				],
 				navIndex:0,
 			  navId:0
@@ -74,6 +85,16 @@
 				console.log("this.navIndex")
 			}
 		}
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	import Tabbar from '../../components/tabbar/tabbar.vue'
+
+
+	export default{
+		components:{
+			Searchbar,
+			Tabbar,
+		}
+
 	}
 </script>
 
@@ -105,7 +126,7 @@
 				left 25upx
 				color #555555
 		.scroll-Y
-			height calc(100vh - 55upx - 60upx)		
+			height calc(100vh - 55upx - 60upx)
 			.bookRack
 				width 90%
 				height 250upx
@@ -126,7 +147,7 @@
 						font-size 23upx
 						padding 5upx 15upx
 						letter-spacing 3upx
-					.userInfo	
+					.userInfo
 						color #C0C0C0
 						font-size 23upx
 						padding 5upx 0
@@ -162,7 +183,7 @@
 						position absolute
 						left 30upx
 						top 32upx
-						color #C0C0C0		
+						color #C0C0C0
 			.bookRacklist
 				width 90%
 				height 250upx
@@ -170,7 +191,7 @@
 				.listImg
 					width 100%
 					height 100%
-					border-radius 30upx			
+					border-radius 30upx
 			.navList
 				display flex
 				font-size 28upx

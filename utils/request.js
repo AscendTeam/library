@@ -1,15 +1,15 @@
-import config from './config.js'
-export default function (url, data={},method="Get"){
+import config from "./config.js"
+export default function(url,data={},method="GET"){
 	return new Promise((resolve,reject)=>{
 		uni.request({
-			url:config.host + config.basePath + url,
+			url:config.host+url,
 			data,
 			method,
-			success: (res)=>{
+			success(res) {
 				resolve(res.data)
 			},
-			fail: () => {
-				reject()
+			fail() {
+				console.log("请求失败")
 			}
 		})
 	})

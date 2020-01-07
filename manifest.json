@@ -1,6 +1,6 @@
 {
     "name" : "微信读书",
-    "appid" : "__UNI__3802F88",
+    "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -51,7 +51,7 @@
         "appid" : "wx6a85bcbc044b3b3e",
         "setting" : {
             "urlCheck" : false,
-            "minified" : false
+            "es6" : true
         },
         "usingComponents" : true
     },

@@ -4,7 +4,7 @@
 					<view>
 							<video class="myVideo" src=""></video>
 					</view>
-					<span class="videoTitle">{{item.review.title}}</span>	
+					<span class="videoTitle">{{item.review.title}}</span>
 					<div class="videoAll">
 						<div class="videoUserico">
 							<image :src="item.review.videoInfo.mediaIcon" mode=""></image>
@@ -32,13 +32,13 @@
 			}
 		},
 		async mounted(){
-			let result = await request("/getVideo") 
+			let result = await request("/getVideo")
 			this.videoData = result.reviews
 			console.log(this.videoData)
 		},
 		methods:{
 			hoke(){
-				
+
 			}
 		}
 
@@ -73,7 +73,7 @@
 					color #555555
 					padding-left 10upx
 					letter-spacing 3upx
-			.videoMation	
+			.videoMation
 				display flex
 				height 50upx
 				line-height 50upx
@@ -84,7 +84,7 @@
 				span
 					font-size 25upx
 					color #555555
-			.videoShare	
+			.videoShare
 				background #007AFF
 				display flex
 				border-radius 50upx
@@ -96,9 +96,9 @@
 				.iconfont
 					padding-left 20upx
 					font-size 38upx
-					
+
 				span
-					padding-right 20upx	
+					padding-right 20upx
 					font-size 25upx
 					letter-spacing 3upx
 </style>
