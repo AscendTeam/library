@@ -1,4 +1,5 @@
 <template>
+	<scroll-view scroll-y="false" class="category_container">
 	<div class="liang_categoryContianer"> 
 		<div class="listItem"  @click="todetail">
 			<div class="left">
@@ -136,6 +137,7 @@
 			
 		
 	</div>
+	</scroll-view>
 </template>
 
 <script>
@@ -174,6 +176,8 @@
 </script>
 
 <style lang="stylus">
+	.category_container
+		height calc(100vh - 180upx)
 	.liang_categoryContianer
 		width 90%
 		margin 0 auto

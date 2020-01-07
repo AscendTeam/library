@@ -1,4 +1,5 @@
 <template>
+<scroll-view scroll-y="false" class="recommend_container">
 	<div class="liang_recommendContainer">
 		<div class="recommendList" v-for='(item, index) in booksList.data.recommendationBookList' :key='index'>
 			<div class="listItem" @click="toDetail(index)">
@@ -12,6 +13,7 @@
 
 		</div>
 	</div>
+</scroll-view>
 </template>
 
 <script>
@@ -40,6 +42,8 @@
 </script>
 
 <style lang="stylus">
+	.recommend_container
+		height calc(100vh - 180upx)
 	.liang_recommendContainer
 		background #fff
 		.recommendList

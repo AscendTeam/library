@@ -1,36 +1,38 @@
 <template>
 	<div>
-	<div class="card">
-	<div class="bookList" v-for="(item,index) in rank" :key="index">
-			<div class="bookCard"   v-for="(rankItem,index) in rank.data" :key = index>
-				<div v-show="index/2===0">
-					<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
-						<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
-						<div class="bookItem" v-for="(itembook,index) in cateItem.lectureBooks" :key = index  v-if="cateItem.lectureBooks[index].searchIdx<4" @click="searchItem(index)">
-							<img :src="itembook.bookInfo.cover" alt="">
-							<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
-							<span class="whiter"> {{itembook.bookInfo.author}}</span>
-						</div>
-						<button class="btn" @click="toMore">查看全部</button>
-					</div>
-				</div>
-					<div v-show="index/2===1">
-						<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
-						<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
-						<div class="bookFItem" >
-							<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = index v-if="cateItem.lectureBooks[index].searchIdx<5" @click="search_item(index)">
-								<img :src="itembook.bookInfo.cover" alt="">
-								<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
-								<span> {{itembook.bookInfo.author}}</span>
+		<scroll-view scroll-y="false" class="rank_container">
+			<div class="card">
+				<div class="bookList" v-for="(item,index) in rank" :key="index">
+					<div class="bookCard"   v-for="(rankItem,index) in rank.data" :key = index>
+						<div v-show="index/2===0">
+							<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
+								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
+								<div class="bookItem" v-for="(itembook,index) in cateItem.lectureBooks" :key = index  v-if="cateItem.lectureBooks[index].searchIdx<4" @click="searchItem(index)">
+									<img :src="itembook.bookInfo.cover" alt="">
+									<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
+									<span class="whiter"> {{itembook.bookInfo.author}}</span>
+								</div>
+								<button class="btn" @click="toMore">查看全部</button>
 							</div>
 						</div>
-						<button class="btn" @click="toMore">查看全部</button>
+						<div v-show="index/2===1">
+							<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
+								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
+								<div class="bookFItem" >
+									<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = index v-if="cateItem.lectureBooks[index].searchIdx<5" @click="search_item(index)">
+										<img :src="itembook.bookInfo.cover" alt="">
+										<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
+										<span> {{itembook.bookInfo.author}}</span>
+									</div>
+								</div>
+								<button class="btn" @click="toMore">查看全部</button>
+							</div>
+						</div>
 					</div>
 				</div>
-		</div>
-</div>
-</div>
-</div>
+			</div>
+		</scroll-view>
+	</div>
 </template>
 
 <script>
@@ -65,6 +67,8 @@
 </script>
 
 <style lang="stylus">
+.rank_container
+	height calc(100vh - 180upx)
 	.card
 		width: calc(100% - 80upx);
 		height: 100%;

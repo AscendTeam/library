@@ -66,33 +66,12 @@
 
 <style lang="stylus">
 	.indexContainer
+		height calc(100vh - 20upx)
 		// display flex
 		// justify-content center
 		//margin 0 auto
-		.searchContainer
-			width 90%
-			height 60upx
-			background #eee
-			border-radius 50upx
-			margin-top 10upx
-			position relative
-			margin 10upx auto
-			input
-				width 90%
-				height 60upx
-				margin-left 10%
-				.placeholder
-					font-size 25upx
-					line-height 60upx
-					color #C0C0C0
-			.iconfont
-				font-size 30upx
-				position absolute
-				line-height 60upx
-				left 25upx
-				color #555555
 		.scroll-Y
-			height calc(100vh - 55upx - 60upx)
+			height calc(100vh - 120upx)
 			.bookRack
 				width 90%
 				height 250upx
@@ -158,9 +137,4 @@
 					width 100%
 					height 100%
 					border-radius 30upx
-			.navList
-				display flex
-				font-size 28upx
-				li
-					margin-left 65upx
 </style>

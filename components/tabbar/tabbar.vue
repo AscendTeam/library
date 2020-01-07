@@ -71,7 +71,7 @@
 			return{
 				choiceIndex:0,
 				duration:500,
-				navArr:["推荐","分类","排行","科幻武侠","名著经典"],
+				navArr:["推荐","分类","排行","青春言情","当代文学"],
 				// itemArr:["A","B","C","D","E"],
 				current:0
 			}
@@ -94,7 +94,7 @@
 .y_tabbar_container
 .y_nav_container
 	>ul
-		padding 40upx
+		padding  0upx 40upx 20upx
 		width 670upx
 		display flex
 		flex-direction row
@@ -112,8 +112,8 @@
 				font-weight bold
 				color black
 .swiper
-	height 2500rpx
+	height calc(100vh - 190upx)
 	swiper-item
 		width 100%
-		height 100%
+		//height 100%
 </style>
