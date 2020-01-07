@@ -1,9 +1,13 @@
 {
-	"pages": [ 
+	"pages": [
 		{
 			"path": "pages/index/index"
-		},{
+		},
+		{
 			"path" : "pages/video/index"
+		},
+		{
+			"path" : "pages/details/index"
 		}
 	],
 	"globalStyle": {

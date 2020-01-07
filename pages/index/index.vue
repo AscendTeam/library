@@ -1,15 +1,28 @@
 <template>
-	<view>
-		微信读书
-	</view>
+	<div class="content" @click="todetail">
+		<div class="text">点击</div>
+	</div>
 </template>
 
 <script>
-	export default {
-
-	}
-</script>
-
-<style>
-	
+	export default{
+		methods:{
+			todetail(){
+				console.log('------')
+				uni.navigateTo({
+					url:'/pages/details/index',
+					fail(err){
+						console.log(err)
+					}
+				})
+			}
+		}
+	}	
+</script>		
+<style lang="stylus">
+.content
+	.text
+		width 200upx
+		height 200upx
+		background-color #007AFF
 </style>
