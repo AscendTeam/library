@@ -92,14 +92,17 @@
 
 <style lang="stylus">
 .y_tabbar_container
-	height 100%
 .y_nav_container
 	>ul
+		padding 40upx
+		width 670upx
 		display flex
+		flex-direction row
+		justify-content space-between
 		>li
-			font-size 36upx
+			font-size 34upx
 			/*font-weight bold*/
-			padding 0 20upx
+			// padding 0 20upx
 			color #999999
 			line-height 1.2em
 			display flex

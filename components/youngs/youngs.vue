@@ -27,7 +27,7 @@
 			}
 		},
 		async mounted(){
-			this.cataList=await request('/getListWX')
+			this.cataList=await request('/getListYQ')
 			// console.log(this.cataList)
 		}
 	}
