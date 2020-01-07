@@ -1,31 +1,32 @@
 {
 	"pages": [
-		
-		{
-				"path" : "components/speech/speech"
-		},{
-				"path" : "components/youngs/youngs"
-		},{
-			"path": "pages/index/index"
-		},{
-			"path":"pages/launch/index"
-		},{
-			"path": "pages/search/index"
-		},{
-			"path" : "pages/video/index"
-		},{
-			"path" : "pages/booksDetail/booksDetail"
-		},{
-       "path":"pages/login/index"
-    },{
-			"path" : "pages/seeMore/seeMore",
-			"style":{
-					"navigationBarBackgroundColor": "#F75B6A",
-					"navigationBarTitleText": "飙升"
-			}
-		}
-		
-    ],
+      {
+        "path": "pages/index/index"
+      },
+      {
+        "path":"pages/launch/index"
+      },
+      {
+        "path":"pages/bookpack/index"
+      },
+      {
+        "path": "pages/search/index"
+      },{
+        "path" : "pages/video/index"
+      },{
+        "path" : "pages/details/index"
+      },{
+        "path" : "pages/booksDetail/booksDetail"
+      },{
+        "path":"pages/login/index"
+      },{
+        "path" : "pages/seeMore/seeMore",
+        "style":{
+          "navigationBarBackgroundColor": "#F75B6A",
+          "navigationBarTitleText": "飙升"
+        }
+      }
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "微信读书",
