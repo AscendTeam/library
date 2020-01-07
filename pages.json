@@ -5,14 +5,12 @@
       },{
         "path":"pages/launch/index"
       },{
-        "path":"pages/search/index"
-      },{
         "path":"pages/video/index"
+      },{
+        "path":"pages/search/index"
       },{
 				"path":"pages/details/index"
 			},{
-        "path":"pages/booksDetail/booksDetail"
-      },{
 				"path":"pages/bookpack/index"
 			},{
         "path":"pages/login/index"

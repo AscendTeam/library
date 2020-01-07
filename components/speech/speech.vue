@@ -20,13 +20,15 @@
 	import request from '../../utils/request.js'
 	export default{
 		data(){
+			
+			
 			return{
 				cataList:{}
 			}
 		},
 		async mounted(){
-			this.cataList=await request('/getListYS')
-			console.log(this.cataList)
+			this.cataList=await request('/getListYQ')
+			// console.log(this.cataList)
 		}
 	}
 </script>
@@ -38,12 +40,11 @@
 		.strip
 			display flex
 			margin 20upx 20upx
-			background-color #F1F1F1
-			border 1px solid #F1F1F1
+			background-color white
 			border-radius 10upx
 			height 280upx
 		.car
-			font-size 40upx
+			font-size 34upx
 			width 60upx
 			font-weight bold
 			text-align center
@@ -54,15 +55,16 @@
 			height 270upx
 			margin 5upx 20upx
 		.titleContent
+			width 300upx
 			margin 50upx 10upx
 			.contentHader
 				font-size 32upx
 				margin 20upx 0upx
 			.contentText
-				font-size 20upx
+				font-size 30upx
 				margin 20upx 0upx
 				color #999999
 			.titleDeatil
-				font-size 20upx
+				font-size 30upx
 				color #999999	
 </style>
