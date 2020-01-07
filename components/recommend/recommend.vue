@@ -30,7 +30,7 @@
 		},
 		methods:{
 			toDetail(){
-				wx.navigateTo({
+				uni.navigateTo({
 					url:'/pages/booksDetail/booksDetail'
 				})
 			}
