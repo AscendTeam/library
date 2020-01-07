@@ -26,7 +26,7 @@
           "path":"pages/login/index"
         },
         {
-          "path":"comments/rank"
+          "path":"components/rank/rank"
         },
 		{
 			"path" : "pages/seeMore/seeMore",
@@ -39,7 +39,7 @@
         "path":"pages/login/index"
       },
       {
-        "path":"comments/rank"
+        "path":"components/rank/rank"
       }
     ],
 	"globalStyle": {

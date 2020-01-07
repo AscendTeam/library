@@ -34,7 +34,7 @@
 </template>
 
 <script>
-	import require from '../utils/request.js'
+	import require from '../../utils/request.js'
 	export default {
 		data(){
 			return{
