@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/login/index",
+    "comments/rank",
     "pages/index/index",
     "pages/video/index"
   ],
@@ -31,5 +33,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap38.json"
+  "sitemapLocation": "sitemap.json"
 }

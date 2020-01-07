@@ -1,8 +1,17 @@
 {
-	"pages": [ 
+	"pages": [
+	
+		{
+			"path":"pages/login/index"
+		},
+		{
+			"path":"comments/rank"
+		},
 		{
 			"path": "pages/index/index"
-		},{
+			
+		},
+		{
 			"path" : "pages/video/index"
 		}
 	],
