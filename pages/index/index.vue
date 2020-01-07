@@ -1,15 +1,20 @@
 <template>
 	<view>
+		<Searchbar></Searchbar>
 		微信读书
 	</view>
 </template>
 
 <script>
-	export default {
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	export default{
+		components:{
+			Searchbar
+		}
 
 	}
 </script>
 
-<style>
+<style lang="stylus">
 	
 </style>
