@@ -1,9 +1,9 @@
 {
 	"pages": [
 		{
-			"path":"pages/launch/index"
-		},{
 			"path": "pages/index/index"
+		},{
+			"path":"pages/launch/index"
 		},{
 			"path": "pages/search/index"
 		},{
@@ -11,22 +11,14 @@
 		},{
 			"path" : "pages/booksDetail/booksDetail"
 		},{
-          	"path":"pages/login/index"
-        },{
-          	"path":"comments/rank"
-        },{
+       "path":"pages/login/index"
+    },{
 			"path" : "pages/seeMore/seeMore",
 			"style":{
 					"navigationBarBackgroundColor": "#F75B6A",
 					"navigationBarTitleText": "飙升"
-							}
-		},
-      {
-        "path":"pages/login/index"
-      },
-      {
-        "path":"comments/rank"
-      }
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

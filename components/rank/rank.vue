@@ -1,7 +1,7 @@
 <template>
 	<div>
-	<div id="card">
-	<div id="bookList" v-for="(item,index) in rank" :key="index">
+	<div class="card">
+	<div class="bookList" v-for="(item,index) in rank" :key="index">
 			<div class="bookCard"   v-for="(rankItem,index) in rank.data" :key = index>
 				<div v-if="index/2===0">
 					<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-	import require from '../utils/request.js'
+	import require from '../../utils/request.js'
 	export default {
 		data(){
 			return{
@@ -59,16 +59,16 @@
 		},
 		async mounted(){
 			this.rank = await require('/getRank')
-				console.log(this.rank)
+				// console.log(this.rank)
 		}
 	}
 </script>
 
 <style lang="stylus">
-	#card
+	.card
 		width: 100%;
 		height: 100%;
-	#bookList
+	.bookList
 		.bookCard
 			.cardTitle
 				width: 280upx;

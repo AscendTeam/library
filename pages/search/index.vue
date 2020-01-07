@@ -78,7 +78,7 @@
 				}
 				let result = await request("/search?title="+this.keyword)
 				this.searchResult = result
-				console.log(result)
+				// console.log(result)
 				this.historyArr.push(this.keyword)
 				this.isSearch = true
 				// let index = this.data.index
@@ -92,7 +92,7 @@
 					key: 'searchHistory_key',
 					data:this.historyArr,
 					success: function () {
-							console.log('success');
+							// console.log('success');
 					},
 				})
 				

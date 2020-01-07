@@ -24,7 +24,7 @@
 		},
 		async mounted(){
 			let result = await request('/getListXY')
-			console.log(result)
+			// console.log(result)
 			this.rankList = result.books
 			//this.booksList = result.data.recommendationBookList
 		}
