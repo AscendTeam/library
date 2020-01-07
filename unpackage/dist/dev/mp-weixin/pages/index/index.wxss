@@ -1,0 +1,124 @@
+.indexContainer .searchContainer {
+  width: 90%;
+  height: 60rpx;
+  background: #eee;
+  border-radius: 50rpx;
+  margin-top: 10rpx;
+  position: relative;
+  margin: 10rpx auto;
+}
+.indexContainer .searchContainer input {
+  width: 90%;
+  height: 60rpx;
+  margin-left: 10%;
+}
+.indexContainer .searchContainer input .placeholder {
+  font-size: 25rpx;
+  line-height: 60rpx;
+  color: #c0c0c0;
+}
+.indexContainer .searchContainer .iconfont {
+  font-size: 30rpx;
+  position: absolute;
+  line-height: 60rpx;
+  left: 25rpx;
+  color: #555;
+}
+.indexContainer .scroll-Y {
+  height: calc(100vh - 55rpx - 60rpx);
+}
+.indexContainer .scroll-Y .bookRack {
+  width: 90%;
+  height: 250rpx;
+  background: #f00;
+  margin: 30rpx auto;
+  background: #666;
+  border-radius: 30rpx;
+  position: relative;
+}
+.indexContainer .scroll-Y .bookRack .matter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 40rpx;
+}
+.indexContainer .scroll-Y .bookRack .matter .iconfont {
+  font-size: 40rpx;
+  color: #fff;
+  margin-left: 35rpx;
+}
+.indexContainer .scroll-Y .bookRack .matter .typeUser {
+  color: #fff;
+  font-size: 23rpx;
+  padding: 5rpx 15rpx;
+  letter-spacing: 3rpx;
+}
+.indexContainer .scroll-Y .bookRack .matter .userInfo {
+  color: #c0c0c0;
+  font-size: 23rpx;
+  padding: 5rpx 0;
+  letter-spacing: 3rpx;
+}
+.indexContainer .scroll-Y .bookRack .matter .feedBack {
+  width: 70rpx;
+  height: 40rpx;
+  background: #888;
+  position: absolute;
+  right: 0;
+  font-size: 23rpx;
+  color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 50rpx 0 0 50rpx;
+}
+.indexContainer .scroll-Y .bookRack .showBook {
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+}
+.indexContainer .scroll-Y .bookRack .showBook .bookName {
+  width: 80rpx;
+  height: 115rpx;
+}
+.indexContainer .scroll-Y .bookRack .bookUp {
+  position: absolute;
+  left: 90%;
+  top: 110rpx;
+  width: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+.indexContainer .scroll-Y .bookRack .bookUp .w-name {
+  font-size: 25rpx;
+  display: block;
+}
+.indexContainer .scroll-Y .bookRack .bookUp .iconfont {
+  position: absolute;
+  left: 30rpx;
+  top: 32rpx;
+  color: #c0c0c0;
+}
+.indexContainer .scroll-Y .bookRacklist {
+  width: 90%;
+  height: 250rpx;
+  margin: 30rpx auto;
+}
+.indexContainer .scroll-Y .bookRacklist .listImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+.indexContainer .scroll-Y .navList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 28rpx;
+}
+.indexContainer .scroll-Y .navList ._li {
+  margin-left: 65rpx;
+}
+
