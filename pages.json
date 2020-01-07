@@ -9,7 +9,8 @@
       },{
         "path":"pages/search/index"
       },{
-				"path":"pages/details/index"
+				"path":"pages/details/index",
+				"navigationBarTitleText": "推理悬疑案"
 			},{
 				"path":"pages/bookpack/index"
 			},{
