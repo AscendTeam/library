@@ -11,7 +11,6 @@
 					<span class="author">{{item.bookInfo.author}}</span>
 					<div class="rating">
 						<span class="star">{{item.bookInfo.star/10}}分</span>
-						
 						<span class="rat">{{item.bookInfo.ratingCount}}人点评</span>
 					</div>
 				</div>
@@ -31,7 +30,7 @@
 		async mounted(){
 			let result = await request('/getListLZ')
 			let data = await request('/getRank')
-			
+
 			console.log(result)
 			console.log(data)
 			this.bookList = result.books
@@ -45,7 +44,7 @@
 		.head
 			height 100upx
 			background #F75B6A
-			img  
+			img
 				width 500upx
 				height 80upx
 				margin-left 80upx
@@ -63,10 +62,10 @@
 					display flex
 					flex-direction column
 					margin-left 30upx
-					
+
 					span
 						overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-						vertical-align middle	
+						vertical-align middle
 						margin-top 20upx
 					.title
 						font-size 36upx
@@ -75,8 +74,8 @@
 					.author
 						font-size 34upx
 						color #aaa
-					
-					
+
+
 					.rating
 						.star
 							margin-right 20upx
@@ -85,11 +84,11 @@
 						.rat
 							font-size 26upx
 							color #aaa
-						
-					
-					
-						
-				
-				
-				
+
+
+
+
+
+
+
 </style>

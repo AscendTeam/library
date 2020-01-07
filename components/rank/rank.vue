@@ -24,7 +24,7 @@
 								<span>{{itembook.bookInfo.author}}</span>
 							</div>
 						</div>
-						<button class="btn">查看全部</button>
+						<button class="btn" @click="toMore">查看全部</button>
 					</div>
 				</div>
 		</div>
@@ -47,8 +47,14 @@
 				console.log(a)
 			},
 			search_item(index){
-				let a = index + 1 
+				let a = index + 1
 				console.log(a)
+			},
+			toMore(){
+				console.log('aaaa')
+				uni.navigateTo({
+					url:'/pages/seeMore/seeMore'
+				})
 			}
 		},
 		async mounted(){
@@ -131,7 +137,6 @@
 			font-size 14px
 			background-color: white;
 			color #007AFF
-			font-family:  SimHei			
+			font-family:  SimHei
 </style>
 
-	

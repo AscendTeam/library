@@ -2,12 +2,12 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
-			// let loading = setTimeout(function(){
-			// 	clearTimeout(loading);
-			// 	uni.reLaunch({
-			// 		url:"/pages/index/index",
-			// 	});
-			// },3000)
+			let loading = setTimeout(function(){
+				clearTimeout(loading);
+				uni.reLaunch({
+					url:"/pages/index/index",
+				});
+			},3000)
 		},
 		onShow: function() {
 			console.log('App Show')
