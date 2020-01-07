@@ -65,41 +65,41 @@
 	#bookList
 		.bookCard
 			.cardTitle
-				width: 140px;
-				height: 30px;
+				width: 280upx;
+				height: 60upx;
 		.bookItem
 			background-color: #FAFAFC
 			width: 100%;
-			height: 100px;
+			height: 200upx;
 			img
-				width: 60px;
-				height: 80px;
+				width: 120upx;
+				height: 160upx;
 			>p
 				position: relative;
 				display inline-block
-				font-size 12px
+				font-size 24upx
 				font-weight bold
-				top: -50px;
-				left: 20px;
+				top: -100upx;
+				left: 40upx;
 			.whiter
 				position: relative;
 				display block
 				color gray
-				font-size 10px
-				margin-left: 88px;
-				top: -44px;
+				font-size 20upx
+				margin-left: 176upx;
+				top: -88upx;
 		.btn
 			width: 90%;
-			height: 30px;
-			font-size 14px
+			height: 60upx;
+			font-size 24upx
 			background-color: white;
 			color #007AFF
 			font-family:  SimHei
 	.Fcard
-		padding-top 30px
+		padding-top 60upx
 		.cardTitle
-			width: 140px;
-			height: 30px;
+			width: 280upx;
+			height: 60upx;
 		.bookFItem
 			display: flex;
 			justify-content: space-between;
@@ -109,26 +109,26 @@
 				width: 50%;
 				height: 25%;
 				img
-					width: 60px;
-					height: 80px;
+					width: 120upx;
+					height: 160upx;
 				>p
 					position: relative;
 					display inline-block
-					font-size 12px
+					font-size 24upx
 					font-weight bold
-					top: -50px;
-					left: 8px;
+					top: -100upx;
+					left: 16upx;
 				span
 					position: relative;
 					display block
 					color gray
-					font-size 10px
-					margin-left: 78px;
-					top: -44px;
+					font-size 20upx
+					margin-left: 156upx;
+					top: -88upx;
 		.btn
 			width: 90%;
-			height: 30px;
-			font-size 14px
+			height: 60upx;
+			font-size 28upx
 			background-color: white;
 			color #007AFF
 			font-family:  SimHei			

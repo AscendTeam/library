@@ -1,12 +1,12 @@
 {
 	"pages": [
-	
-		{
-			"path":"pages/login/index"
-		},
 		{
 			"path":"comments/rank"
 		},
+		{
+			"path":"pages/login/index"
+		},
+
 		{
 			"path": "pages/search/index"
 		},{
