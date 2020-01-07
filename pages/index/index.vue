@@ -1,5 +1,5 @@
 <template>
-	<div>  
+	<div>
 		<div class="indexContainer">
 			<Searchbar></Searchbar>
 			<scroll-view scroll-y="true" class="scroll-Y" show-scrollbar="true">
@@ -30,11 +30,11 @@
 </template>
 
 <script>
-	import Ranking from "../../components/ranking/Ranking.vue"
-	import Recommend from "../../components/recommend/recommend.vue"
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
-	export default {
+    import Recommend from "../../components/recommend/recommend.vue"
+	
+	export default{
 		components:{
 			Searchbar,
 			Tabbar,
@@ -62,7 +62,7 @@
 			},
 		}
 	}
- </script>
+</script>
 
 <style lang="stylus">
 	.indexContainer
