@@ -1,7 +1,5 @@
 {
 	"pages": [
-
-
 		{
 			"path": "pages/search/index"
 		},{
@@ -27,8 +25,14 @@
 					"navigationBarBackgroundColor": "#F75B6A",
 					"navigationBarTitleText": "飙升"
 							}
-		}
-	],
+		},
+      {
+        "path":"pages/login/index"
+      },
+      {
+        "path":"comments/rank"
+      }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "微信读书",

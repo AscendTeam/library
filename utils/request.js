@@ -1,17 +1,16 @@
 import config from './config.js'
-export function request(url, data, method='GET'){
-	return new Promise((resolve, reject) => {
+export default function(url,data={},method='GET'){
+	return new Promise((resolve,reject)=>{
 		uni.request({
-			url: config.host + config.basePath + url,
+			url: config.host + url,
 			data,
 			method,
-			success: (res) => {
+			success : (res)=>{
 				resolve(res.data)
 			},
-			fail: (error) => {
-				reject(error);
+			fail : ()=>{
+				console.log('请求失败')
 			}
 		})
 	})
 }
-
