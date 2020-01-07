@@ -1,19 +1,7 @@
 <template>
-	<div>
-        <Searchbar></Searchbar>
-        微信读书
-        <view class="y_tabbar_container">
-            <Tabbar></Tabbar>
-        </view>
-
-        <Category/>
-        <hr>
-        <Recommend/>
+	<div>  
 		<div class="indexContainer">
-			<div class="searchContainer">
-				<i class="iconfont iconRectangleCopy"></i>
-				<input type="text" placeholder="锦衣天下" placeholder-class="placeholder"/>
-			</div>
+			<Searchbar></Searchbar>
 			<scroll-view scroll-y="true" class="scroll-Y" show-scrollbar="true">
 				<div class="bookRack" @click="tobook">
 					<div class="matter">
@@ -33,36 +21,24 @@
 				<div class="bookRacklist">
 					<image src="../../static/imgs/1.jpg" class="listImg" :class="{activeClass: 0 === navIndex}"></image>
 				</div>
-				<ul class="navList">
-					<li @click="changeNavIndex(0,0)" class="navItem">推荐</li>
-					<li @click="changeNavIndex()">分类</li>
-					<li>排行</li>
-					<li>青春言情</li>
-					<li>励志治愈</li>
-				</ul>
-				<Recommend v-if='navIndex=== 0'/>
-				<Classify v-if='navIndex=== 1'/>
+				<view class="y_tabbar_container">
+				    <Tabbar></Tabbar>
+				</view>
 			</scroll-view>
 	  </div>
 	</div>
 </template>
 
 <script>
-	// import { TabContainer, TabContainerItem } from 'mint-ui'
 	import Ranking from "../../components/ranking/Ranking.vue"
-	import Classify from "../../components/classify/classify.vue"
-	import Motivational from "../../components/motivational/motivational.vue"
 	import Recommend from "../../components/recommend/recommend.vue"
-	import 	Stuye from "../../components/stuye/stuye.vue"
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	import Tabbar from '../../components/tabbar/tabbar.vue'
 	export default {
 		components:{
-			Ranking,
-			Classify,
-			Motivational,
-            Searchbar,
-            Tabbar,
-			Stuye,
-			IndexHeader:Recommend
+			Searchbar,
+			Tabbar,
+			Recommend
 		},
 		data(){
 			return{
@@ -83,20 +59,10 @@
 				this.navIndex = index
 				this.navId = navId
 				console.log("this.navIndex")
-			}
+			},
 		}
-	import Searchbar from '../../components/searchbar/searchbar.vue'
-	import Tabbar from '../../components/tabbar/tabbar.vue'
-
-
-	export default{
-		components:{
-			Searchbar,
-			Tabbar,
-		}
-
 	}
-</script>
+ </script>
 
 <style lang="stylus">
 	.indexContainer
