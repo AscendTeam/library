@@ -1,18 +1,27 @@
 <template>
-	<view class="content">
-		<Rank></Rank>
+	<view>
+		<Searchbar></Searchbar>
+		微信读书
+		<Category/>
+		<hr>
+		<Recommend/>
 	</view>
 </template>
 
 <script>
-	import Rank from '../../comments/rank.vue'
-	export default {
+	import Searchbar from '../../components/searchbar/searchbar.vue'
+	import Recommend from '../../components/recommend/recommend.vue'
+	import Category from '../../components/category/category.vue'
+	export default{
 		components:{
-			Rank
+			Searchbar,
+			Recommend,
+			Category
 		}
+
 	}
 </script>
 
-<style>
+<style lang="stylus">
 
 </style>
