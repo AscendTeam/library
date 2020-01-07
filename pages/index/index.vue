@@ -2,6 +2,10 @@
 	<view>
 		<Searchbar></Searchbar>
 		微信读书
+		<view class="y_tabbar_container">
+			<Tabbar></Tabbar>
+		</view>
+		
 		<Category/>
 		<hr>
 		<Recommend/>
@@ -10,13 +14,13 @@
 
 <script>
 	import Searchbar from '../../components/searchbar/searchbar.vue'
-	import Recommend from '../../components/recommend/recommend.vue'
-	import Category from '../../components/category/category.vue'
+	import Tabbar from '../../components/tabbar/tabbar.vue'
+	
+	
 	export default{
 		components:{
 			Searchbar,
-			Recommend,
-			Category
+			Tabbar,
 		}
 
 	}

@@ -1,46 +1,24 @@
 {
 	"pages": [
-	
-		{
-			"path":"pages/login/index"
-		},
-		{
-			"path":"comments/rank"
-		},
-		{
-			"path": "pages/search/index"
-		},{
+        {
 			"path": "pages/index/index"
 		},{
 			"path":"pages/launch/index"
 		},{
+			"path": "pages/search/index"
+		},{
 			"path" : "pages/video/index"
-		},
-		{
+		},{
 			"path" : "pages/booksDetail/booksDetail"
-		},
-		{
-			"path" : "pages/index1"
-		},
-        {
-          "path":"pages/login/index"
-        },
-        {
-          "path":"components/rank/rank"
-        },
-		{
+		},{
+       "path":"pages/login/index"
+    },{
 			"path" : "pages/seeMore/seeMore",
 			"style":{
 					"navigationBarBackgroundColor": "#F75B6A",
 					"navigationBarTitleText": "飙升"
-							}
-		},
-      {
-        "path":"pages/login/index"
-      },
-      {
-        "path":"components/rank/rank"
-      }
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	import {request} from '../../utils/request.js'
+	import request from '../../utils/request.js'
 	export default{
 		data(){
 			return{
@@ -24,7 +24,7 @@
 		},
 		async mounted(){
 			let result = await request('/getListXY')
-			console.log(result)
+			// console.log(result)
 			this.rankList = result.books
 			//this.booksList = result.data.recommendationBookList
 		}

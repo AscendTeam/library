@@ -21,14 +21,14 @@
 		height 100%
 		position relative
 		// .logo
-		// 	width 200rpx
-		// 	height 200rpx
+		// 	width 200upx
+		// 	height 200upx
 		.loading
 			position absolute
-			top 350rpx
+			top 350upx
 			left 0; right 0;
 			margin 0 auto
-			width 250rpx
-			height 250rpx
+			width 250upx
+			height 250upx
 	
 </style>
