@@ -97,6 +97,7 @@
 				height 270upx
 				margin 5upx 10upx
 			.titleContent
+				width 300upx
 				margin 50upx 10upx
 				.contentHader
 					font-size 32upx
