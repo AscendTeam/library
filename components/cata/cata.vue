@@ -38,8 +38,7 @@
 		.strip
 			display flex
 			margin 20upx 20upx
-			background-color #F1F1F1
-			border 1px solid #F1F1F1
+			background-color white
 			border-radius 10upx
 			height 280upx
 		.car

@@ -5,13 +5,13 @@
       },{
         "path":"pages/launch/index"
       },{
-        "path":"pages/search/index"
-      },{
         "path":"pages/video/index"
+      },{
+        "path":"pages/search/index"
       },{
 				"path":"pages/details/index"
 			},{
-        "path":"pages/booksDetail/booksDetail"
+        "path":"pages/books/index"
       },{
 				"path":"pages/bookpack/index"
 			},{

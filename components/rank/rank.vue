@@ -11,7 +11,7 @@
 							<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
 							<span class="whiter"> {{itembook.bookInfo.author}}</span>
 						</div>
-						<button class="btn">查看全部</button>
+						<button class="btn" @click="toMore">查看全部</button>
 					</div>
 				</div>
 					<div v-show="index/2===1">

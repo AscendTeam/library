@@ -9,9 +9,10 @@
 </template>
 
 <script>
-	export default{
+	// export default{
 		
-	}
+	// }
+
 </script>
 
 <style lang="stylus">
@@ -20,13 +21,13 @@
 		width 100%
 		height 100%
 		position relative
-		// .logo
-		// 	width 200upx
-		// 	height 200upx
+		// overflow hidden
+	
 		.loading
 			position absolute
 			top 350upx
-			left 0; right 0;
+			left 0
+			right 0
 			margin 0 auto
 			width 250upx
 			height 250upx
