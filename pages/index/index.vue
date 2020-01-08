@@ -52,7 +52,7 @@
 			}
 		},
 		mounted() {
-		
+			
 		},
 		computed:{
 			myinfo(){

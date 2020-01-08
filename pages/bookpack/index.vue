@@ -31,6 +31,7 @@
 </template>
 
 <script>
+	const app = getApp()
 	export default{
 		
 		data(){
@@ -45,20 +46,25 @@
 				this.userInfo = res.mp.detail.userInfo
 				// console.log(this.userInfo)
 				this.isLogin = true
-				
+				this.$bus.$emit("getUser",this.userInfo)
 			},
 		},
 		mounted() {
-			uni.getUserInfo({
-				success:(res)=> {
-					this.userInfo = res.userInfo
-					this.isLogin = true
-					this.$bus.userInfo = this.userInfo
-				},
-				fail:()=> {
-					console.log('失败')
-				}
-			})
+			if(app.$vm.userInfo.nickName){
+				this.isLogin = true
+				this.userInfo = app.$vm.userInfo
+			}
+			
+			// uni.getUserInfo({
+			// 	success:(res)=> {
+			// 		this.userInfo = res.userInfo
+			// 		this.isLogin = true
+			// 		this.$bus.userInfo = this.userInfo
+			// 	},
+			// 	fail:()=> {
+			// 		console.log('失败')
+			// 	}
+			// })
 		}
 
 	}
