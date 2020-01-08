@@ -1,9 +1,10 @@
 {
 	"pages": [
-      {
+
+		{
+			"path":"pages/launch/index"
+		},{
         "path":"pages/index/index"
-      },{
-        "path":"pages/launch/index"
       },{
         "path":"pages/video/index"
       },{
