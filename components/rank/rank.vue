@@ -132,20 +132,18 @@
 					span
 						color gray
 						font-size 24upx
-		.btn
-			width: 100%
-			height: 80upx;
-			width: 100%;
-			height: 100upx;
-			font-size 28upx
-			line-height 80upx
-			padding 0
-			background-color: white;
-			color #007AFF
-			font-family:  SimHei
-			line-height: 100upx;
-			border 1px solid #FAFAFC
-			border-radius: 13rpx;
-			padding-bottom 20upx
+	.btn
+		width: 100%
+		height: 80upx;
+		font-size 28upx
+		line-height 80upx
+		border 1px solid #E6E6E6
+		border-radius: 20upx;
+		padding-bottom 20upx
+		padding 0
+		background-color: white;
+		color #007AFF
+		// font-family:  SimHei
+
 </style>
 
