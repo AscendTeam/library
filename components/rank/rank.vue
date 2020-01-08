@@ -20,7 +20,7 @@
 											<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
 											<span> {{itembook.bookInfo.author}}</span>
 										</div>
-										
+
 									</div>
 								</div>
 								<button class="btn" @click="toMore(cateItem)">查看全部</button>
@@ -37,8 +37,7 @@
 	export default {
 		data(){
 			return{
-				rank:[],
-				isShow:false
+				rank:[]
 			}
 		},
 		methods:{
@@ -55,7 +54,6 @@
 					url:'/pages/books/index'
 				})
 			}
-			
 		},
 		async mounted(){
 			let result = await require('/getRank')
@@ -137,16 +135,17 @@
 		.btn
 			width: 100%
 			height: 80upx;
+			width: 100%;
+			height: 100upx;
 			font-size 28upx
 			line-height 80upx
+			padding 0
 			background-color: white;
 			color #007AFF
-			border 1px solid #E6E6E6
-			outline: none;
-			border-radius 20upx
-			margin-bottom 20upx
-			padding 0
-			position none
-			// font-family:  SimHei
+			font-family:  SimHei
+			line-height: 100upx;
+			border 1px solid #FAFAFC
+			border-radius: 13rpx;
+			padding-bottom 20upx
 </style>
 

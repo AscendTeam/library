@@ -64,5 +64,5 @@
 				color #999999
 			.titleDeatil
 				font-size 30upx
-				color #999999	
+				color #999999
 </style>

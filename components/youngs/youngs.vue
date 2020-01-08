@@ -56,7 +56,6 @@
 			margin 50upx 10upx
 			width 300upx
 			.contentHader
-			
 				font-size 32upx
 				margin 20upx 0upx
 			.contentText
@@ -66,5 +65,5 @@
 				color #999999
 			.titleDeatil
 				font-size 30upx
-				color #999999	
+				color #999999
 </style>
