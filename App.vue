@@ -14,6 +14,9 @@
 					console.log(err)
 				}
 			})
+			this.$bus.$on("getUser",(userinfo)=>{
+				this.userInfo = userinfo
+			})
 		},
 		onLaunch: function() {
 			console.log('App Launch')
