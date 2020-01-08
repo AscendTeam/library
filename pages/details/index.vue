@@ -19,16 +19,16 @@
 					</div>
 				</div>
 			</div>
-			<cataList v-if="navIndex!=0"></cataList>
+			<cata v-if="navIndex!=0"></cata>
 		</scroll-view>
 	</div>
 </template>
 <script>
 	import request from '../../utils/request.js'
-	import CataList from '../../components/cataList/cataList.vue'
+	import Cata from '../../components/cata/cata.vue'
 	export default{
 		components:{
-			CataList,
+			Cata,
 		},
 			data(){
 				return{
@@ -57,7 +57,7 @@
 		async mounted() {
 			this.indexDatas=await request('/getListXY')
 		}
-	}	
+	}
 </script>
 
 <style lang="stylus">
@@ -97,6 +97,7 @@
 				height 270upx
 				margin 5upx 10upx
 			.titleContent
+				width 300upx
 				margin 50upx 10upx
 				.contentHader
 					font-size 32upx
@@ -107,5 +108,5 @@
 					color #999999
 				.titleDeatil
 					font-size 30upx
-					color #999999			
+					color #999999
 </style>

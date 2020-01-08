@@ -9,17 +9,17 @@
       },{
         "path":"pages/video/index"
       },{
-        "path":"pages/details/index"
-      },{
-        "path":"pages/booksDetail/booksDetail"
+        "path":"pages/details/index",
+        "navigationBarTitleText": "推理悬疑案"
       },{
         "path":"pages/bookpack/index"
+      },{
+        "path":"pages/login/index"
       },{
         "path" : "pages/seeMore/seeMore",
         "style":{
           "navigationBarBackgroundColor": "#F75B6A",
           "navigationBarTitleText": "飙升"
-					
         }
       }
 	],

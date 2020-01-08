@@ -39,10 +39,10 @@
 				<Rank></Rank>
 			</swiper-item>
 			<swiper-item>
-				<Rank></Rank>
+				<Youngs></Youngs>
 			</swiper-item>
 			<swiper-item>
-				<Rank></Rank>
+				<Speech></Speech>
 			</swiper-item>
 <!-- 			<swiper-item v-for="(item,index) in itemArr" :key="index">
 				<view class="swiper-item uni-bg-red">{{item}}</view>
@@ -57,11 +57,15 @@
 	import Recommend from '../recommend/recommend.vue'
 	import Category from '../category/category.vue'
 	import Rank from '../rank/rank.vue'
+	import Youngs from '../youngs/youngs.vue'
+	import Speech from '../speech/speech.vue'
 	export default{
 		components:{
 			Recommend,
 			Category,
-			Rank
+			Rank,
+			Youngs,
+			Speech
 		},
 		data(){
 			return{

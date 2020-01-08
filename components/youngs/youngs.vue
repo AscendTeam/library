@@ -40,12 +40,11 @@
 		.strip
 			display flex
 			margin 20upx 20upx
-			background-color #F1F1F1
-			border 1px solid #F1F1F1
+			background-color white
 			border-radius 10upx
 			height 280upx
 		.car
-			font-size 24upx
+			font-size 34upx
 			width 60upx
 			font-weight bold
 			text-align center
@@ -57,14 +56,16 @@
 			margin 5upx 20upx
 		.titleContent
 			margin 50upx 10upx
+			width 300upx
 			.contentHader
-				font-size 24upx
+
+				font-size 32upx
 				margin 20upx 0upx
 			.contentText
-				font-size 20upx
+				width 180upx
+				font-size 30upx
 				margin 20upx 0upx
 				color #999999
 			.titleDeatil
-				font-size 20upx
-				color #999999	
+				font-size 30upx
 </style>
