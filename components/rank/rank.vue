@@ -2,32 +2,26 @@
 	<div>
 		<scroll-view scroll-y="false" class="rank_container">
 			<div class="card">
-				<div class="bookList" v-for="(item,index) in rank" :key="index">
-					<div class="bookCard"   v-for="(rankItem,index) in rank.data" :key = index>
-						<div v-show="index/2===0">
-							<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
-								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
-								<div class="bookItem" v-for="(itembook,index) in cateItem.lectureBooks" :key = index  v-if="cateItem.lectureBooks[index].searchIdx<4" @click="searchItem(index)">
-									<img :src="itembook.bookInfo.cover" alt="">
-									<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
-									<span class="whiter"> {{itembook.bookInfo.author}}</span>
+				<div class="bookList">
+					<div class="bookCard"   v-for="(rankItem,rankIndex) in rank" :key = "rankIndex">
+							<div class="Fcard" v-for="(cateItem,cateIndex) in rankItem.categories" :key="cateIndex">
+								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title"></image>
+								<div v-if="rankIndex%2===0">
+									<div class="bookItem" v-for="(itembook,index) in cateItem.lectureBooks" :key = "index"  v-if="cateItem.lectureBooks[index].searchIdx<4" @click="toDetail">
+										<img :src="itembook.bookInfo.cover" alt="">
+										<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
+										<span class="whiter"> {{itembook.bookInfo.author}}</span>
+									</div>
 								</div>
-								<button class="btn" @click="toMore">查看全部</button>
-							</div>
-						</div>
-						<div v-show="index/2===1">
-							<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
-								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
-								<div class="bookFItem" >
-									<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = index v-if="cateItem.lectureBooks[index].searchIdx<5" @click="search_item(index)">
+								<div class="bookFItem" v-if="rankIndex%2!==0">
+									<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = "index" v-if="cateItem.lectureBooks[index].searchIdx<5" @click="toDetail">
 										<img :src="itembook.bookInfo.cover" alt="">
 										<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
 										<span> {{itembook.bookInfo.author}}</span>
 									</div>
 								</div>
-								<button class="btn" @click="toMore">查看全部</button>
+								<button class="btn" @click="toMore(cateItem)">查看全部</button>
 							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -40,28 +34,29 @@
 	export default {
 		data(){
 			return{
-				rank:[]
+				rank:[],
+				isShow:false
 			}
 		},
 		methods:{
-			searchItem(index){
-				let a = index
-				console.log(a)
-			},
-			search_item(index){
-				let a = index + 1
-				console.log(a)
-			},
-			toMore(){
-				console.log('aaaa')
+			toMore(data){
+				let id = data.CategoryId
+				// console.log(data)
+				// console.log(id)
 				uni.navigateTo({
-					url:'/pages/seeMore/seeMore'
+					url:'/pages/seeMore/seeMore?id='+id
+				})
+			},
+			toDetail(){
+				uni.navigateTo({
+					url:'/pages/books/index'
 				})
 			}
+			
 		},
 		async mounted(){
-			this.rank = await require('/getRank')
-				// console.log(this.rank)
+			let result = await require('/getRank')
+			this.rank = result.data
 		}
 	}
 </script>

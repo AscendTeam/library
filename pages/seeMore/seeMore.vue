@@ -1,90 +1,102 @@
 <template>
-	<div class="liang_moreContainer">
+<div>
+	<div class="liang_moreContainer"  v-for='(cateItem, index) in projectData.categories' :key='index'>
 		<div class="head">
-			<img src="https://rescdn.qqmail.com/weread/cover/ranklist.rising.chart_detail_title.fu6ZCi3SI6.png" alt="">
+			<img :src="cateItem.ranklistCover.chart_detail_title">
 		</div>
-		<div class="list" v-for='(item, index) in bookList' :key='index'>
-			<div class="listItem">
-				<img :src="item.bookInfo.cover" alt="">
-				<div class="item">
-					<span class="title">{{item.bookInfo.title}}</span>
-					<span class="author">{{item.bookInfo.author}}</span>
-					<div class="rating">
-						<span class="star">{{item.bookInfo.star/10}}分</span>
-						<span class="rat">{{item.bookInfo.ratingCount}}人点评</span>
+		<div class="cataListContent">
+<!-- 			<scroll-view scroll-y="true" class="kkk"> -->
+				<div class="strip" v-for="(itembook,index) in cateItem.lectureBooks" :key="index">
+					<div class="car">{{itembook.searchIdx}}</div>
+					<image :src="itembook.bookInfo.cover" mode=""></image>
+					<div class="titleContent">
+						<p class="contentHader">{{itembook.bookInfo.title}}</p>
+						<p class="contentText">{{itembook.bookInfo.author}}</p>
+						<div class="titleDeatil">
+							{{itembook.ratingCount}}人今日在阅读
+						</div>
 					</div>
 				</div>
-			</div>
+<!-- 			</scroll-view> -->
 		</div>
 	</div>
+</div>
 </template>
 
 <script>
-	import {request} from '../../utils/request.js'
+	import request from '../../utils/request.js'
 	export default{
 		data(){
 			return{
 				bookList:[],
+				cateId: '',
+				projectData:[]
 			}
 		},
+		onLoad: function (option) {
+			// console.log(option)
+			// console.log(option.id);
+			this.cateId = option.id;
+		},
 		async mounted(){
-			let result = await request('/getListLZ')
-			let data = await request('/getRank')
-
-			console.log(result)
-			console.log(data)
-			this.bookList = result.books
-			//this.booksList = result.data.recommendationBookList
-		}
+			let rank = await request('/getRank')
+			let cateId = this.cateId;
+			// console.log(rank);
+			// try{
+			this.projectData = rank.data.find((categories, cid)=>categories.name==cateId)
+			console.log(this.projectData)
+			// }catch(e){
+			// 	console.log(e);
+			// }
+		},
+		
 	}
 </script>
 
 <style lang="stylus">
 	.liang_moreContainer
 		.head
-			height 100upx
+			height 80upx
 			background #F75B6A
 			img
 				width 500upx
 				height 80upx
 				margin-left 80upx
-		.list
-			width 90%
-			margin 0 auto
-			.listItem
-				display flex
-				margin-top 40upx
-				img
-					width 140upx
-					height 200upx
-					vertical-align middle
-				.item
-					display flex
-					flex-direction column
-					margin-left 30upx
-
-					span
-						overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-						vertical-align middle
-						margin-top 20upx
-					.title
-						font-size 36upx
-						font-weight bold
-						color #666A70
-					.author
-						font-size 34upx
-						color #aaa
-
-
-					.rating
-						.star
-							margin-right 20upx
-							color #aaa
-							font-size 28upx
-						.rat
-							font-size 26upx
-							color #aaa
-
+		// .cataListContent
+		// 	.kkk
+		// 		height calc(100vh - 180upx)
+	.strip
+		padding 10upx 0
+		display flex
+		margin 20upx 20upx
+		background-color white
+		border-radius 10upx
+		height 280upx
+	.car
+		font-size 34upx
+		width 60upx
+		font-weight bold
+		text-align center
+		line-height 280upx
+		margin 0 20upx
+	image
+		width 180upx
+		height 270upx
+		margin 5upx 20upx
+	.titleContent
+		margin 50upx 10upx
+		width 300upx
+		.contentHader
+			font-size 32upx
+			margin 20upx 0upx
+		.contentText
+			width 180upx
+			font-size 30upx
+			margin 20upx 0upx
+			color #999999
+		.titleDeatil
+			font-size 30upx
+			color #999999	
 
 
 

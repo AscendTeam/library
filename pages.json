@@ -7,21 +7,33 @@
       },{
         "path":"pages/video/index"
       },{
-        "path":"pages/search/index"
+        "path":"pages/search/index",
+				"style":{
+				  "navigationBarTitleText": "搜索"
+				}
       },{
-				"path":"pages/details/index",
-				"navigationBarTitleText": "推理悬疑案"
+				"path":"pages/books/index",
+				"style":{
+				  "navigationBarTitleText": ""
+				}
 			},{
-				"path":"pages/bookpack/index"
+				"path":"pages/details/index",
+				"navigationBarTitleText": "分类"
+			},{
+				"path":"pages/bookpack/index",
+				"style":{
+				  "navigationBarTitleText": "书架"
+				}
 			},{
         "path":"pages/login/index"
       },{
         "path" : "pages/seeMore/seeMore",
         "style":{
           "navigationBarBackgroundColor": "#F75B6A",
-          "navigationBarTitleText": "飙升"
+          "navigationBarTitleText": "排行"
         }
       }
+			
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

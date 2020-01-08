@@ -32,13 +32,11 @@
 <script>
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
-    import Recommend from "../../components/recommend/recommend.vue"
 	
 	export default{
 		components:{
 			Searchbar,
 			Tabbar,
-			Recommend
 		},
 		data(){
 			return{

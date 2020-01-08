@@ -8,7 +8,7 @@
 		</scroll-view>
 		<!--(内容区) 每一个列表 -->
 		<scroll-view scroll-y="true" class="kkk">
-			<div class="strip" v-if="navIndex===0" v-for="(item,index) in indexDatas.books" :key="index">
+			<div class="strip" v-if="navIndex===0" v-for="(item,index) in indexDatas.books" :key="index" @click="toDetail">
 				<div class="car">{{item.searchIdx}}</div>
 				<image :src="item.bookInfo.cover" mode=""></image>
 				<div class="titleContent">
@@ -19,16 +19,23 @@
 					</div>
 				</div>
 			</div>
-			<cata v-if="navIndex!=0"></cata>
+			<cataxy v-if="navIndex%3 == 0"></Cataxy>
+			<catays v-if="navIndex%3 == 1"></Catays>
+			<Catalz v-if="navIndex%3 >= 2"></Catalz>
 		</scroll-view>
 	</div>
 </template>
 <script>
 	import request from '../../utils/request.js'
-	import Cata from '../../components/cata/cata.vue'
+	import Cataxy from '../../components/cata/cataxy.vue'
+	import Catays from '../../components/cata/catays.vue'
+	import Catalz from '../../components/cata/catalz.vue'
+	
 	export default{
 		components:{
-			Cata,
+			Cataxy,
+			Catays,
+			Catalz
 		},
 			data(){
 				return{
@@ -52,6 +59,11 @@
 			changNavIndex(index,navId){
 				this.navIndex=index
 				this.navId=navId
+			},
+			toDetail(){
+				uni.navigateTo({
+					url:'/pages/books/index'
+				})
 			}
 		},
 		async mounted() {
