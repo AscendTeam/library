@@ -60,7 +60,6 @@
 		
 		methods:{
 			onKeyInput: function(event) {
-				
 				this.keyword = event.target.value
 				// historyArr:event.target.value
 				if(this.keyword){

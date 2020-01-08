@@ -3,7 +3,7 @@
 		<scroll-view scroll-y="false" class="rank_container">
 			<div class="card">
 				<div class="bookList">
-					<div class="bookCard"   v-for="(rankItem,rankIndex) in rank" :key = "rankIndex">
+					<div class="bookCard" :class="rankIndex%2===0?'backColor':''"  v-for="(rankItem,rankIndex) in rank" :key = "rankIndex">
 							<div class="Fcard" v-for="(cateItem,cateIndex) in rankItem.categories" :key="cateIndex">
 								<image class="cardTitle" :src="cateItem.ranklistCover.chart_title"></image>
 								<div v-if="rankIndex%2===0">
@@ -16,8 +16,11 @@
 								<div class="bookFItem" v-if="rankIndex%2!==0">
 									<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = "index" v-if="cateItem.lectureBooks[index].searchIdx<5" @click="toDetail">
 										<img :src="itembook.bookInfo.cover" alt="">
-										<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
-										<span> {{itembook.bookInfo.author}}</span>
+										<div>
+											<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
+											<span> {{itembook.bookInfo.author}}</span>
+										</div>
+										
 									</div>
 								</div>
 								<button class="btn" @click="toMore(cateItem)">查看全部</button>
@@ -65,16 +68,18 @@
 .rank_container
 	height calc(100vh - 180upx)
 	.card
-		width: calc(100% - 80upx);
+		width: 100%
 		height: 100%;
-		padding 0 40upx
 	.bookList
 		.bookCard
+			padding 0 40upx
+			padding-bottom 20upx
+		.backColor
+			background #FAFAFC
 			.cardTitle
-				width: 280upx;
 				height: 60upx;
 		.bookItem
-			background-color: #FAFAFC
+			// background-color: #FAFAFC
 			width: 100%;
 			height: 200upx;
 			img
@@ -83,7 +88,7 @@
 			>p
 				position: relative;
 				display inline-block
-				font-size 32upx
+				font-size 28upx
 				font-weight bold
 				top: -100upx;
 				left: 40upx;
@@ -91,19 +96,11 @@
 				position: relative;
 				display block
 				color gray
-				font-size 26upx
+				font-size 24upx
 				margin-left: 176upx;
 				top: -88upx;
-		.btn
-			width: 90%;
-			height: 60upx;
-			font-size 24upx
-			background-color: white;
-			color #007AFF
-			margin-top 20upx
-			font-family:  SimHei
 	.Fcard
-		padding-top 60upx
+		padding-top 20upx
 		.cardTitle
 			width: 280upx;
 			height: 60upx;
@@ -115,29 +112,41 @@
 			.item
 				width: 50%;
 				height: 25%;
+				display flex
+				justify-content: space-between;
+				flex-direction: row;
 				img
 					width: 120upx;
 					height: 160upx;
-				>p
-					position: relative;
-					display inline-block
-					font-size 24upx
-					font-weight bold
-					top: -100upx;
-					left: 16upx;
-				span
-					position: relative;
-					display block
-					color gray
-					font-size 20upx
-					margin-left: 156upx;
-					top: -88upx;
+				div
+					width 255upx
+					height: 160upx;
+					padding-left 20upx
+					padding-bottom 40upx
+					>p
+						width 180upx
+						font-size 28upx
+						font-weight bold
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						overflow: hidden;
+					span
+						color gray
+						font-size 24upx
 		.btn
-			width: 90%;
-			height: 60upx;
+			width: 100%
+			height: 80upx;
 			font-size 28upx
+			line-height 80upx
 			background-color: white;
 			color #007AFF
-			font-family:  SimHei
+			border 1px solid #E6E6E6
+			outline: none;
+			border-radius 20upx
+			margin-bottom 20upx
+			padding 0
+			position none
+			// font-family:  SimHei
 </style>
 
