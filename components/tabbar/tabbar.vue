@@ -6,22 +6,6 @@
 				v-for="(navItem,index) in navArr" :key="index">
 					{{navItem}}
 				</li>
-				<!-- <li class="y_detail_item_notice" :class="{detail_item_chiose:current===1}"
-					@click="goItem(1)">
-					分类
-				</li>
-				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===2}"
-					@click="goItem(2)">
-					排行
-				</li>
-				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===3}"
-					@click="goItem(3)">
-					科幻武侠
-				</li>
-				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===4}"
-					@click="goItem(4)">
-					名著经典
-				</li> -->
 			</ul>
 		</div>
 
@@ -38,15 +22,15 @@
 			<swiper-item>
 				<Rank></Rank>
 			</swiper-item>
+			
 			<swiper-item>
 				<Rank></Rank>
 			</swiper-item>
+			
 			<swiper-item>
 				<Rank></Rank>
 			</swiper-item>
-<!-- 			<swiper-item v-for="(item,index) in itemArr" :key="index">
-				<view class="swiper-item uni-bg-red">{{item}}</view>
-			</swiper-item> -->
+			
 		</swiper>
 
 
@@ -65,10 +49,8 @@
 		},
 		data(){
 			return{
-				choiceIndex:0,
 				duration:500,
 				navArr:["推荐","分类","排行","科幻武侠","名著经典"],
-				// itemArr:["A","B","C","D","E"],
 				current:0
 			}
 		},
@@ -76,7 +58,6 @@
 		methods: {
 			changeItem(event){
 				this.current = event.target.current
-				// console.log(event)
 			},
 			goItem(index){
 				this.current = index
@@ -94,7 +75,6 @@
 		display flex
 		>li
 			font-size 36upx
-			/*font-weight bold*/
 			padding 0 20upx
 			color #999999
 			line-height 1.2em
@@ -103,7 +83,7 @@
 			align-items center
 			&.detail_item_chiose
 				font-weight bold
-				color black
+				color #1B88EE
 .swiper
 	height 2500rpx
 	swiper-item

@@ -11,12 +11,11 @@
 							<span>{{item.review.videoInfo.mediaName}}</span>
 						</div>
 						<div class="videoMation">
-							<i class="iconfont iconxin" @click="hoke"></i>
-							<span>{{item.review.videoInfo.duration}}</span>
+							<i class="iconfont iconxin1" @click="hothear(index)" :class="item.isCollected?'active':''"></i>
+							<span>{{item.likesCount}}</span>
 						</div>
 						<div class="videoShare">
-							<i class="iconfont iconweixin"></i>
-							<span>发给朋友</span>
+							<button open-type='share' contactShare> <i class="iconfont iconweixin"></i>发给朋友</button>
 						</div>
 					</div>
 			</view>
@@ -28,14 +27,30 @@
 	export default {
 		data(){
 			return{
-				videoData:[]
+				videoData:[],
 			}
 		},
 		async mounted(){
 			let result = await request("/getVideo")
 			this.videoData = result.reviews
-			console.log(this.videoData)
+			// console.log(this.videoData)
 		},
+		methods:{
+			hothear(index){
+				console.log(index)
+				let flag = this.videoData[index].isCollected || false
+				this.$set(this.videoData[index],'isCollected',!flag)
+				
+				let num=this.videoData[index].likesCount
+				console.log(num)
+				if (flag) {
+			   // this.$set(num+=1) 
+				 this.$set(this.videoData[index],'num+=1',!num)
+				} else{
+					// num-=1
+				}
+			}
+		}
 	}
 </script>
 
@@ -75,10 +90,13 @@
 					.iconfont
 						font-size 50upx
 						padding 0 5upx
+						color #656B79
+					.active
+						 color red
 					span
 						font-size 25upx
 						color #555555
-				.videoShare	
+				button	
 					background #007AFF
 					display flex
 					border-radius 50upx
@@ -87,11 +105,9 @@
 					color white
 					position absolute
 					right 0
+					font-size 24upx
 					.iconfont
-						padding-left 20upx
 						font-size 38upx
-					span
-						padding-right 20upx	
-						font-size 25upx
-						letter-spacing 3upx
+						padding-right 5upx
+						
 </style>

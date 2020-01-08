@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div>  
 		<div class="indexContainer">
 			<Searchbar></Searchbar>
 			<scroll-view scroll-y="true" class="scroll-Y" show-scrollbar="true">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="bookRacklist">
-					<image src="../../static/imgs/1.jpg" class="listImg" :class="{activeClass: 0 === navIndex}"></image>
+					<image src="../../static/imgs/1.jpg" class="listImg"></image>
 				</div>
 				<view class="y_tabbar_container">
 				    <Tabbar></Tabbar>
@@ -30,24 +30,14 @@
 </template>
 
 <script>
+	import Recommend from "../../components/recommend/recommend.vue"
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
-    import Recommend from "../../components/recommend/recommend.vue"
-	
-	export default{
+	export default {
 		components:{
 			Searchbar,
 			Tabbar,
 			Recommend
-		},
-		data(){
-			return{
-				navList:[
-
-				],
-				navIndex:0,
-			  navId:0
-			}
 		},
 		methods:{
 			tobook(){
@@ -55,14 +45,9 @@
 					url:"/pages/bookpack/index"
 				})
 			},
-			changeNavIndex(index,navId){
-				this.navIndex = index
-				this.navId = navId
-				console.log("this.navIndex")
-			},
-		}
+	  },
 	}
-</script>
+ </script>
 
 <style lang="stylus">
 	.indexContainer
