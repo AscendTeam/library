@@ -21,8 +21,17 @@
 			</div>
 		</div>
 		<div class="book">
+			<div class="bookItem">
+					<img :src="bookInfo.coverr">
+					<span>{{bookInfo.title}}</span>
+			</div>
+			<div class="bookItem">
+					<img :src="bookInfo.coverr">
+					<span>{{bookInfo.title}}</span>
+			</div>
+
 			<div class="addBook">
-				<div class="add">
+				<div class="add" @click="toAllBook">
 					十
 				</div>
 			</div>
@@ -32,12 +41,12 @@
 
 <script>
 	const app = getApp()
+	import require from '../../utils/request.js'
 	export default{
 		data(){
 			return{
 				userInfo:{},
-				isLogin:false,
-				historyObj:{}
+				isLogin:false
 			}
 		},
 		methods:{
@@ -48,9 +57,13 @@
 				this.isLogin = true
 				this.$bus.$emit("getUser",this.userInfo)
 			},
+			toAllBook(){
+				uni.navigateTo({
+					url:"/pages/index/index"
+				})
+			}
 		},
 		mounted() {
-			this.historyObj = uni.getStorageSync('searchHistory_key') || {}
 			if(app.$vm.userInfo.nickName){
 				this.isLogin = true
 				this.userInfo = app.$vm.userInfo
@@ -134,6 +147,13 @@
 			width: 90%;
 			margin-left 5%
 			padding-top: 70upx;
+			display flex
+			flex-direction row
+			justify-content space-between
+			.bookItem
+				width: 188upx;
+				height: 272upx;
+				border 2upx solid #DEE0E2
 			.addBook
 				width: 188upx;
 				height: 272upx;

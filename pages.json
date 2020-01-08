@@ -1,11 +1,6 @@
 {
 	"pages": [
       {
-      	"path":"pages/books/index",
-      	"style":{
-      		"navigationBarTitleText": ""
-      	}
-      },{
         "path":"pages/index/index"
       },{
         "path":"pages/launch/index"
@@ -25,6 +20,11 @@
 					"navigationBarTitleText": "书架"
 				}
 			},{
+      	"path":"pages/books/index",
+      	"style":{
+      		"navigationBarTitleText": ""
+      	}
+      },{
 				"path" : "pages/seeMore/seeMore",
 				"style":{
 					"navigationBarBackgroundColor": "#F75B6A",

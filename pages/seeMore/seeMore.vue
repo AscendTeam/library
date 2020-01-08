@@ -44,7 +44,7 @@
 			// console.log(rank);
 			// try{
 			this.projectData = rank.data.find((categories, cid)=>categories.name==cateId)
-			console.log(this.projectData)
+			// console.log(this.projectData)
 			// }catch(e){
 			// 	console.log(e);
 			// }
