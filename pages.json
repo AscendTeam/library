@@ -1,65 +1,74 @@
 {
-	"pages": [
-
-		{
-			"path":"pages/launch/index"
-		},{
-        "path":"pages/index/index"
-      },{
-        "path":"pages/video/index"
-      },{
-        "path":"pages/search/index",
-				"style":{
-					"navigationBarTitleText": "搜索"
-				}
-			},{
-				"path":"pages/details/index",
-				"navigationBarTitleText": "分类"
-			},{
-				"path":"pages/bookpack/index",
-				"style":{
-					"navigationBarTitleText": "书架"
-				}
-			},{
-      	"path":"pages/books/index",
-      	"style":{
-      		"navigationBarTitleText": ""
-      	}
-      },{
-				"path" : "pages/seeMore/seeMore",
-				"style":{
-					"navigationBarBackgroundColor": "#F75B6A",
-					"navigationBarTitleText": "排行"
-				}
-      },{
-				"path":"pages/comment/comment",
-				"style":{
-					"navigationBarTitleText": "写点评"
-				}
-			}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "微信读书",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
-		"color": "#C0C4CC",
-		"selectedColor": "#fa436a",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
+  "pages": [
+    {
+      "path": "pages/launch/index"
+    },
+    {
+      "path": "pages/index/index"
+    },
+    {
+      "path": "pages/video/index"
+    },
+    {
+      "path": "pages/search/index",
+      "style": {
+        "navigationBarTitleText": "搜索"
+      }
+    },
+    {
+      "path": "pages/details/index",
+      "navigationBarTitleText": "分类"
+    },
+    {
+      "path": "pages/bookpack/index",
+      "style": {
+        "navigationBarTitleText": "书架"
+      }
+    },
+    {
+      "path": "pages/books/index",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/seeMore/seeMore",
+      "style": {
+        "navigationBarBackgroundColor": "#F75B6A",
+        "navigationBarTitleText": "排行"
+      }
+    },
+    {
+      "path": "pages/comment/comment",
+      "style": {
+        "navigationBarTitleText": "写点评"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "微信读书",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#C0C4CC",
+    "selectedColor": "#fa436a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
-				"pagePath": "pages/index/index",
-				"text": "免费阅读",
-				"iconPath": "/static/imgs/book.png",
-				"selectedIconPath": "/static/imgs/book-active.png"
-			}, {
-				"pagePath": "pages/video/index",
-				"text": "视频",
-				"iconPath": "/static/imgs/play.png",
-				"selectedIconPath": "/static/imgs/play-active.png"
-    }]
+        "pagePath": "pages/index/index",
+        "text": "免费阅读",
+        "iconPath": "/static/imgs/book.png",
+        "selectedIconPath": "/static/imgs/book-active.png"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "text": "视频",
+        "iconPath": "/static/imgs/play.png",
+        "selectedIconPath": "/static/imgs/play-active.png"
+      }
+    ]
   }
 }
