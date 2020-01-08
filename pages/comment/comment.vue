@@ -7,50 +7,7 @@
 					<span class="authorName">{{cm.author.name}}</span>
 					<span>点评</span>
 					<star class="star2" :score="cm.numericStar" size="24"></star>
-					
 					<!-- <p>展开</p> -->
-				</div>
-				<p>{{cm.content}}</p>
-			</div>
-			<div class="comment" v-for="(cm,index) in commentData" :key="index">
-				<image :src="cm.author.avatar"></image>
-				<div class="hReader">
-					<span class="authorName">{{cm.author.name}}</span>
-					<span>点评</span>
-					<star class="star2" :score="cm.numericStar" size="24"></star>
-					
-					<!-- <p>展开</p> -->
-				</div>
-				<p>{{cm.content}}</p>
-			</div>
-			<div class="comment" v-for="(cm,index) in commentData" :key="index">
-				<image :src="cm.author.avatar"></image>
-				<div class="hReader">
-					<span class="authorName">{{cm.author.name}}</span>
-					<span>点评</span>
-					<star class="star2" :score="cm.numericStar" size="24"></star>
-					
-					<!-- <p>展开</p> -->
-				</div>
-				<p>{{cm.content}}</p>
-			</div>
-			<div class="comment" v-for="(cm,index) in commentData" :key="index">
-				<image :src="cm.author.avatar"></image>
-				<div class="hReader">
-					<span class="authorName">{{cm.author.name}}</span>
-					<span>点评</span>
-					<star class="star2" :score="cm.numericStar" size="24"></star>
-					
-					<!-- <p>展开</p> -->
-				</div>
-				<p>{{cm.content}}</p>
-			</div>
-			<div class="comment" v-for="(cm,index) in commentData" :key="index">
-				<image :src="cm.author.avatar"></image>
-				<div class="hReader">
-					<span class="authorName">{{cm.author.name}}</span>
-					<span>点评</span>
-					<star class="star1" :score="cm.numericStar" size="24"></star>
 				</div>
 				<p>{{cm.content}}</p>
 			</div>
@@ -77,7 +34,7 @@
 		async mounted() {
 			this.requestData = await request('/getDetail1')
 			this.commentData = this.requestData.data.reviewList.items
-			console.log (this.commentData)
+			// console.log (this.commentData)
 		}
 	}
 </script>
@@ -85,7 +42,7 @@
 <style lang="stylus">
 	.hAllComment
 		// height 100%
-		background #6F7A80
+		background #EDEEF0
 		.comment
 			background #FFFFFF
 			padding 30upx

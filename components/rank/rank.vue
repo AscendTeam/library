@@ -86,8 +86,7 @@
 			>p
 				position: relative;
 				display inline-block
-				font-size 28upx
-				font-weight bold
+				font-size 32upx
 				top: -100upx;
 				left: 40upx;
 			.whiter
@@ -123,8 +122,7 @@
 					padding-bottom 40upx
 					>p
 						width 180upx
-						font-size 28upx
-						font-weight bold
+						font-size 30upx
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
 						-webkit-line-clamp: 2;

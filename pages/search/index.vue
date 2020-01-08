@@ -80,13 +80,8 @@
 				// console.log(result)
 				this.historyArr.push(this.keyword)
 				this.isSearch = true
-				// let index = this.data.index
-				// let obj = wx.getStorageSync('isCollected')
-				// obj=obj?obj:{}
-				// obj[index] = isCollected
-				// wx.setStorageSync('isCollected', obj)
-				
-				let arr = uni.getStorageSync('searchHistory_key') || []
+
+				// let arr = uni.getStorageSync('searchHistory_key') || []
 				uni.setStorage({
 					key: 'searchHistory_key',
 					data:this.historyArr,

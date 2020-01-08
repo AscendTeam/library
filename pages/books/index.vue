@@ -1,97 +1,104 @@
 <template>
 	<view style="overflow: hidden; width: 100%;height:100%">
-		<scroll-view scroll-y="true" class="scroll-y" style="height:100%">
-			<div class="hBox">
-			<div class="hBtop">
-				<image class="hAuthorImage" :src="bookInfo.cover"></image>
-				<div class='hDetail'>	
-					<h1>{{bookInfo.title}}</h1>
-					<p class="hAuthor">{{bookInfo.author}}</p>				
-					<div class='hItd' @click="moreItd=true">
-						<span>{{bookInfo.intro}}</span>
-						<i class="">></i>
+			<scroll-view scroll-y="true" class="scroll-y" style="height:100%" >
+				<div @click="showCar">
+					<div class="hBox">
+						<!-- 内容提要 -->
+						<div class="hBtop">
+							<image class="hAuthorImage" :src="bookInfo.cover"></image>
+							<div class='hDetail'>	
+								<h1>{{bookInfo.title}}</h1>
+								<p class="hAuthor">{{bookInfo.author}}</p>				
+								<div class='hItd' @click="moreItd=true">
+									<span>{{bookInfo.intro}}</span>
+									<i class="">></i>
+								</div>
+								
+							</div>
+						</div>
+						<!-- 点评数据 -->
+						<div class="hElt">
+							<div>
+								<span class="hScore">{{bookInfo.star/10}}</span>
+								<star :score="bookInfo.star/10" size='24' class="star1"></star>
+								<p>{{bookInfo.payType}}人点评</p>
+							</div>
+							<div>
+								<span class="hScore">{{(bookInfo.readingCount/10000).toFixed(1)}}</span><span>万人</span>
+								<p >在此读书 ></p>
+							</div>
+						</div>
+						<!-- 更多点评 -->
+						<div class="hUserElt" @click="toMoreComment">
+							<div class="huser">
+								<image class="hAvater" :src="bookToke.author.avatar"></image>
+								<div>
+									<span class="hUserName" >{{bookToke.author.name}}</span>
+									<span>点评</span>
+									<star class="star2" :score="bookToke.numericStar" size="24"></star>
+								</div>
+								<p class="hUserSide">{{bookToke.content}}</p>
+								<p class="hUserMore">查看更多点评 ></p>
+							</div>
+						</div>
+						<!-- 评分 -->
+						<div class="hReview">
+							<span>轻点评分</span>
+						</div>
+						<div class="hDraw" @click="onloadBook = true">
+							去微信读书app领取43天无限卡
+						</div>
 					</div>
-					
-				</div>
-			</div>
-			<div class="hElt">
-				<div>
-					<span class="hScore">{{bookInfo.star/10}}</span>
-					<star :score="bookInfo.star/10" size='24' class="star1"></star>
-					<p>{{bookInfo.payType}}人点评</p>
-				</div>
-				<div>
-					<span class="hScore">{{(bookInfo.readingCount/10000).toFixed(1)}}</span><span>万人</span>
-					<p >在此读书 ></p>
-				</div>
-			</div>
-			<div class="hUserElt">
-				<div class="huser">
-					<image class="hAvater" :src="bookToke.author.avatar"></image>
-					<div>
-						<span class="hUserName" >{{bookToke.author.name}}</span>
-						<span>点评</span>
-						<star class="star2" :score="bookToke.numericStar" size="24"></star>
+					<!-- 文章内容 -->
+					<div class="hPublish">
+						<!-- <h2>出版说明</h2> -->
+						<span class="hAuthor"></span>
+						<p v-html="bookcontent.content"></p>
+						<button class="nextBooks">
+							下一章
+						</button>
 					</div>
-					<p class="hUserSide">{{bookToke.content}}</p>
-					<p class="hUserMore" @click="toMoreComment">查看更多点评 ></p>
+				</div>
+			</scroll-view>
+			<div class="activity-content" v-show="moreItd">
+				<div class="activity-sheet-close">
+					<p>简介</p>
+					<p>{{bookInfo.intro}}</p>
+					<p class="xtoken" @click='moreItd=false'>X</p>
+				</div>
+				<div class='activity-sheet-cover' @click="moreItd=false">
 				</div>
 			</div>
-			<div class="hReview">
-				<span>轻点评分</span>
+			<div class="onload-content" v-show="onloadBook">
+				<div class="onloadclose">
+					<p>下载</p>
+					<p>微信读书app</p>
+					<ul>
+						<li>全场书籍免费读</li>
+						<li>优质公众号一网打尽</li>
+						<li>精彩漫画，讲书看不停</li>
+						<li>看看微信好友在看什么书</li>
+					</ul>
+					<p>立即下载 在客服会话回复1</p>
+					<p class="xtoken" @click='onloadBook=false'>X</p>
+				</div>
+				<div class='onloadcover' @click="onloadBook=false">
+				</div>
 			</div>
-			<div class="hDraw" @click="onloadBook = true">
-				去微信读书app领取43天无限卡
+			<div class="navBtm" v-show="isShowCar">
+				<div>
+					目录
+				</div>
+				<div>
+					听书
+				</div>
+				<div>
+					设置
+				</div>
+				<button :class="iscollection ? 'noAdd' : 'add'"  @click="collection">{{iscollection ? "已加入书架" : "加入书架"}}</button>
+				
 			</div>
-			<div class="hPublish">
-				<h2>出版说明</h2>
-				<span class="hAuthor"></span>
-				<p>{{bookInfo.intro}}</p>
-				<button class="nextBooks">
-					下一章
-				</button>
-			</div>
-		</div>
-		</scroll-view>
-		<div class="activity-content" v-show="moreItd">
-			<div class="activity-sheet-close">
-				<p>简介</p>
-				<p>{{bookInfo.intro}}</p>
-				<p class="xtoken" @click='moreItd=false'>X</p>
-			</div>
-			<div class='activity-sheet-cover' @click="moreItd=false">
-			</div>
-		</div>
-	<!-- 	<div class="onload-content" v-show="onloadBook">
-			<div class="onloadclose">
-				<p>下载</p>
-				<p>微信读书app</p>
-				<ul>
-					<li>全场书籍免费读</li>
-					<li>优质公众号一网打尽</li>
-					<li>精彩漫画，讲书看不停</li>
-					<li>看看微信好友在看什么书</li>
-				</ul>
-				<p>立即下载 在客服会话回复1</p>s
-				<p class="xtoken" @click='onloadBook=false'>X</p>
-			</div>
-			<div class='onloadcover' @click="onloadBook=false">
-			</div>
-		</div> -->
-		<div class="navBtm">
-			<div>
-				目录
-			</div>
-			<div>
-				听书
-			</div>
-			<div>
-				设置
-			</div>
-			<button :class="iscollection ? 'noAdd' : 'add'"  @click="collection">{{iscollection ? "已加入书架" : "加入书架"}}</button>
-			
-		</div>
-	</view>
+		</view>
 </template>
 
 <script>
@@ -101,37 +108,53 @@
 		onLoad:function(option){
 			this.bookToken = option.id
 		},
+		components:{
+			star
+		},
 		data() {
 			return {
 				bookInfo:{},
 				moreItd:false,
 				bookToke:{},
-				iscollection:false
+				iscollection:false,
+				isShowCar:false,
+				bookcontent:{}
 			}
 		},
 		methods: {
-			toMoreComment(){
-				uni.navigateTo({
-					url:'../comment/comment'
-				})
+				toMoreComment(){
+					uni.navigateTo({
+						url:'/pages/comment/comment'
+					})
+				},
+				showCar(event){
+					event.stopPropagation()
+					this.isShowCar = !this.isShowCar
+				},
+				collection(){
+					this.iscollection = !this.iscollection
+					let title = this.iscollection? "已加入购物车" : "取消加入"
+					uni.showToast({
+						title
+					})
+					
+					// let index = this.bookcontent.bookId
+					// let obj = uni.getStorageSync('isCollected') 
+					// obj[index] = this.iscollection
+					// uni.setStorageSync({
+					// 	key: 'isCollected',
+					// 	data:obj,
+					// })
+
+					
+				}
 			},
-			collection(){
-				this.iscollection = !this.iscollection
-				let title = this.iscollection? "已加入购物车" : "取消加入"
-				wx.showToast({
-					title
-				})
-			}
-			},
-		components:{
-			star
-		},
+
 		async mounted() {
 			this.requestData = await request('/getDetail1')
-			console.log(this.requestData)
 			this.bList = this.requestData.data.book
 			this.bookInfo= this.bList
-			console.log(this.bookInfo)
+			this.bookcontent = this.requestData.data.chapterContent
 			this.bookToke = this.requestData.data.reviewList.items[0]
 		}
 	}
@@ -362,9 +385,9 @@
 			border-radius 20upx
 			text-align center
 		.hPublish
-			margin 40upx 0
-			padding 40upx 0
-			background #F4F5F7
+			// margin 40upx 0
+			padding 40upx
+			background #F8F8FA
 			font-size 32upx
 			color #0D1218
 			.nextBooks
@@ -389,6 +412,7 @@
 		position absolute
 		bottom 0
 		left 0
+		z-index 99
 		.add
 			margin 20upx 0
 			padding 0

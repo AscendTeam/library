@@ -1,6 +1,11 @@
 {
 	"pages": [
       {
+      	"path":"pages/books/index",
+      	"style":{
+      		"navigationBarTitleText": ""
+      	}
+      },{
         "path":"pages/index/index"
       },{
         "path":"pages/launch/index"
@@ -12,11 +17,6 @@
 					"navigationBarTitleText": "搜索"
 				}
 			},{
-				"path":"pages/books/index",
-				"style":{
-					"navigationBarTitleText": ""
-				}
-			},{
 				"path":"pages/details/index",
 				"navigationBarTitleText": "分类"
 			},{
@@ -25,12 +25,17 @@
 					"navigationBarTitleText": "书架"
 				}
 			},{
-					"path" : "pages/seeMore/seeMore",
-					"style":{
-						"navigationBarBackgroundColor": "#F75B6A",
-						"navigationBarTitleText": "排行"
-					}
-      }
+				"path" : "pages/seeMore/seeMore",
+				"style":{
+					"navigationBarBackgroundColor": "#F75B6A",
+					"navigationBarTitleText": "排行"
+				}
+      },{
+				"path":"pages/comment/comment",
+				"style":{
+					"navigationBarTitleText": "写点评"
+				}
+			}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

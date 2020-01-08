@@ -12,7 +12,7 @@
 				const {score} = this
 				const arr = []
 				let scoreInteger = Math.floor(score/2)
-				console.log(scoreInteger)
+				// console.log(scoreInteger)
 				for(let i = 0; i < scoreInteger;i++){
 					arr.push('on')
 				}
@@ -23,7 +23,7 @@
 				while(arr.length < 5){
 					arr.push("off")
 				}
-				console.log(arr)
+				// console.log(arr)
 				return arr
 			}
 		}
