@@ -1,10 +1,12 @@
 <template>
 	<div id="bookShelf">
 		<div class="topBar">
-			<div class="userName">
-				<span>{{userInfo.nickName}}</span>
-				<image :src="userInfo.avatarUrl"></image>
-			</div>
+				<button class="userName" open-type="getUserInfo" @getuserinfo="getuserinfo" withCredentials=“true” v-if="!isLogin" >授权登陆</button>
+				<div v-if="isLogin">
+					<span>{{userInfo.nickName}}</span>
+					<image :src="userInfo.avatarUrl"></image>
+				</div>
+				
 			<div class="bookActive">
 					<div class="text">
 						<p>无限卡今日到期</p>
@@ -13,10 +15,10 @@
 			</div>
 		</div>
 		<div class="bookCard">
-			<button open-type="getUserInfo" @getuserinfo="getuserinfo">
+			<div class="text_">
 				<span>去微信读书app领取43天无限卡</span>
 				<span class="right">></span>
-			</button>
+			</div>
 		</div>
 		<div class="book">
 			<div class="addBook">
@@ -30,29 +32,35 @@
 
 <script>
 	export default{
+		
 		data(){
 			return{
-				userInfo:{}
+				userInfo:{},
+				isLogin:false
 			}
 		},
 		methods:{
 			getuserinfo(res){
-			console.log(res)
-			this.userInfo = res.mp.detail.userInfo
-			console.log(this.userInfo)
+				// console.log(res)
+				this.userInfo = res.mp.detail.userInfo
+				// console.log(this.userInfo)
+				this.isLogin = true
+				
 			},
 		},
 		mounted() {
 			uni.getUserInfo({
 				success:(res)=> {
-					
 					this.userInfo = res.userInfo
+					this.isLogin = true
+					this.$bus.userInfo = this.userInfo
 				},
 				fail:()=> {
 					console.log('失败')
 				}
 			})
 		}
+
 	}
 </script>
 
@@ -68,12 +76,11 @@
 			border-radius 30upx
 			margin-top 40upx
 			border 2upx solid #DEE0E2
-			.userName
+			>div
 				position: relative;
 				width: 90%;
 				height: 50%;
 				margin-left 5%
-				border-bottom 2upx solid #DEE0E2
 				image
 					position: absolute;
 					width: 86upx;
@@ -86,11 +93,16 @@
 					position: absolute;
 					top 50%
 					transform translateY(-50%)
+					left 0
+			.userName
+				height 50%
+			
 			.bookActive
 				position: relative;
 				width: 90%;
 				height: 50%;
 				margin-left 5%
+				border-top 1px solid #DEE0E2
 				.text
 					position: absolute;
 					font-size 24upx
@@ -100,22 +112,28 @@
 						color gray
 		.bookCard
 			width: 90%;
+			height: 100upx;
 			margin-left 5%
 			margin-top: 34upx;
 			border-radius 70upx
 			outline none
 			background-color: #5D5F66;
-			button
+			.text
 				border-radius 70upx
-				outline none
 				background-color: #5D5F66;
-				span
-					color white
-					font-size 24upx
-				.right
-					color white
-					font-size 24upx
-					margin-left: 230upx
+				bottom 1upx
+			span
+				color white
+				font-size 24upx
+				margin-right: 50rpx
+				padding-top 1upx
+				position: relative;
+				left: 9px;
+				bottom: -8px;
+			.right
+				color white
+				font-size 24upx
+				margin-left: 230upx
 		.book
 			width: 90%;
 			margin-left 5%

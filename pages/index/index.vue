@@ -5,8 +5,9 @@
 			<scroll-view scroll-y="true" class="scroll-Y" show-scrollbar="true">
 				<div class="bookRack" @click="tobook">
 					<div class="matter">
-						<i class="iconfont iconus"></i>
-						<span class="typeUser">游客</span>
+						<!-- <img src="../../static/imgs/user.png" alt=""> -->
+						<image :src="myinfo.avatarUrl?myinfo.avatarUrl:'../../static/imgs/user.png'"></image>
+						<span class="typeUser">{{myinfo.nickName?myinfo.nickName:'登录'}}</span>
 						<span class="userInfo">无线卡免费阅读.剩余1天</span>
 						<div class="feedBack">反馈</div>
 					</div>
@@ -32,13 +33,13 @@
 <script>
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
-    import Recommend from "../../components/recommend/recommend.vue"
-	
+	import Recommend from "../../components/recommend/recommend.vue"
+	const app = getApp()
 	export default{
 		components:{
 			Searchbar,
 			Tabbar,
-			Recommend
+			Recommend,
 		},
 		data(){
 			return{
@@ -46,7 +47,16 @@
 
 				],
 				navIndex:0,
-			  navId:0
+			  navId:0,
+				// myinfo:{}
+			}
+		},
+		mounted() {
+		
+		},
+		computed:{
+			myinfo(){
+				return app.$vm.userInfo
 			}
 		},
 		methods:{
@@ -59,7 +69,7 @@
 				this.navIndex = index
 				this.navId = navId
 				console.log("this.navIndex")
-			},
+			}
 		}
 	}
 </script>
@@ -104,10 +114,13 @@
 				.matter
 					display flex
 					padding-top 40upx
-					.iconfont
+					image
+						width: 40upx;
+						height: 40upx;
 						font-size 40upx
 						color white
 						margin-left 35upx
+						border-radius 50%
 					.typeUser
 						color white
 						font-size 23upx

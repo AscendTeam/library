@@ -1,5 +1,20 @@
 <script>
 	export default {
+		data(){
+			return {
+				userInfo:{}
+			}
+		},
+		mounted() {
+			uni.getUserInfo({
+				success:(res)=> {
+					this.userInfo = JSON.parse(res.rawData)
+				},
+				fail:err=> {
+					console.log(err)
+				}
+			})
+		},
 		onLaunch: function() {
 			console.log('App Launch')
 			// let loading = setTimeout(function(){
@@ -8,6 +23,7 @@
 			// 		url:"/pages/index/index",
 			// 	});
 			// },3000)
+			
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -15,8 +31,14 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+			
+		},
+		onLoad:function(options){
+			console.log("^^^")
+		
 		}
 	}
+	
 </script>
 
 <style lang="stylus">

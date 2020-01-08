@@ -3,31 +3,36 @@
 	<div class="card">
 	<div class="bookList" v-for="(item,index) in rank" :key="index">
 			<div class="bookCard"   v-for="(rankItem,index) in rank.data" :key = index>
-				<div v-if="index/2===0">
-					<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
+				<div v-show="index/2===0">
+					<div class="cardList">
+						<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
 						<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
 						<div class="bookItem" v-for="(itembook,index) in cateItem.lectureBooks" :key = index  v-if="cateItem.lectureBooks[index].searchIdx<4" @click="searchItem(index)">
 							<img :src="itembook.bookInfo.cover" alt="">
-							<p>{{itembook.searchIdx}}{{itembook.bookInfo.title}}</p>
-							<span class="whiter">{{itembook.bookInfo.author}}</span>
-						</div>
-						<button class="btn">查看全部</button>
-					</div>
-				</div>
-					<div v-show="index/2===1">
-						<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
-						<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
-						<div class="bookFItem" >
-							<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = index v-if="cateItem.lectureBooks[index].searchIdx<5" @click="search_item(index)">
-								<img :src="itembook.bookInfo.cover" alt="">
-								<p>{{itembook.searchIdx}}{{itembook.bookInfo.title}}</p>
-								<span>{{itembook.bookInfo.author}}</span>
-							</div>
+							<p>{{itembook.searchIdx}} {{itembook.bookInfo.title}}</p>
+							<span class="whiter"> {{itembook.bookInfo.author}}</span>
 						</div>
 						<button class="btn" @click="toMore">查看全部</button>
 					</div>
 				</div>
-		</div>
+			</div>
+				<div v-show="index/2===1">
+					<div class="Fcard" v-for="(cateItem,index) in rankItem.categories" :key="index" >
+					<image class="cardTitle" :src="cateItem.ranklistCover.chart_title" mode=""></image>
+					<div class="bookFItem" >
+						<div class="item"  v-for="(itembook,index) in cateItem.lectureBooks" :key = index v-if="cateItem.lectureBooks[index].searchIdx<5" @click="search_item(index)">
+							<img :src="itembook.bookInfo.cover" alt="">
+							<div class="bookName">
+								<span>{{itembook.searchIdx}} {{itembook.bookInfo.title}}
+								</span>
+								</div>
+							<span> {{itembook.bookInfo.author}}</span>
+						</div>
+					</div>
+					<button class="btn" @click="toMore">查看全部</button>
+				</div>
+			</div>
+	</div>
 </div>
 </div>
 </div>
@@ -66,10 +71,15 @@
 
 <style lang="stylus">
 	.card
-		width: 100%;
+		width: calc(100% - 80upx);
 		height: 100%;
+		padding 0 40upx
 	.bookList
 		.bookCard
+			.cardList
+				width: 100%;
+				background-color: #FAFAFC
+				margin-top 40upx
 			.cardTitle
 				width: 280upx;
 				height: 60upx;
@@ -83,7 +93,7 @@
 			>p
 				position: relative;
 				display inline-block
-				font-size 24upx
+				font-size 32upx
 				font-weight bold
 				top: -100upx;
 				left: 40upx;
@@ -91,16 +101,22 @@
 				position: relative;
 				display block
 				color gray
-				font-size 20upx
+				font-size 26upx
 				margin-left: 176upx;
 				top: -88upx;
+		
 		.btn
-			width: 90%;
-			height: 60upx;
-			font-size 24upx
+			width: 100%;
+			height: 100upx;
+			font-size 28upx
 			background-color: white;
 			color #007AFF
 			font-family:  SimHei
+			line-height: 100upx;
+			text-align center
+			border 1px solid #FAFAFC
+			border-radius: 13rpx;
+			padding-bottom 20upx
 	.Fcard
 		padding-top 60upx
 		.cardTitle
@@ -117,26 +133,37 @@
 				img
 					width: 120upx;
 					height: 160upx;
-				>p
-					position: relative;
-					display inline-block
-					font-size 24upx
-					font-weight bold
-					top: -100upx;
-					left: 16upx;
+				.bookName
+					span
+						position: relative;
+						display inline-block
+						font-size 24upx
+						font-weight bold
+						top: -156rpx;
+						left: -12rpx;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical
 				span
 					position: relative;
 					display block
 					color gray
 					font-size 20upx
 					margin-left: 156upx;
-					top: -88upx;
+					top: -133rpx;
 		.btn
-			width: 90%;
-			height: 60upx;
+			width: 100%;
+			height: 100upx;
 			font-size 28upx
 			background-color: white;
 			color #007AFF
 			font-family:  SimHei
+			line-height: 100upx;
+			text-align center
+			border 1px solid #FAFAFC
+			border-radius: 13rpx;
+			padding-bottom 20upx
 </style>
 
