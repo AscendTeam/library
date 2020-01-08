@@ -1,8 +1,9 @@
 <template>
+<scroll-view scroll-y="false" class="recommend_container">
 	<div class="liang_recommendContainer">
 		<div class="recommendList" v-for='(item, index) in booksList.data.recommendationBookList' :key='index'>
-			<div class="listItem" @click="toDetail(index)">
-				<img class="booksImg" :src="item.cover" alt="">
+			<div class="listItem" @click="toDetail">
+				<img class="booksImg" :src="item.cover" >
 				<div class="right">
 					<span class="title">{{item.title}}</span>
 					<span class="author">{{item.author}}</span>
@@ -12,6 +13,7 @@
 
 		</div>
 	</div>
+</scroll-view>
 </template>
 
 <script>
@@ -31,7 +33,7 @@
 		methods:{
 			toDetail(){
 				uni.navigateTo({
-					url:'/pages/booksDetail/booksDetail'
+					url:'/pages/books/index'
 				})
 			}
 		}
@@ -40,6 +42,8 @@
 </script>
 
 <style lang="stylus">
+	.recommend_container
+		height calc(100vh - 180upx)
 	.liang_recommendContainer
 		background #fff
 		.recommendList

@@ -27,13 +27,13 @@
 
 <style lang="stylus">
 .y_searchBar
-	margin 20upx
+	padding 20upx
 	position relative
 	span
 		font-size 40upx
 		position absolute
-		top 15upx
-		left 20upx
+		top 40upx
+		left 40upx
 	input
 		width 100%
 		height 80upx

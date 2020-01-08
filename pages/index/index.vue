@@ -1,12 +1,13 @@
 <template>
-	<div>  
+	<div>
 		<div class="indexContainer">
 			<Searchbar></Searchbar>
 			<scroll-view scroll-y="true" class="scroll-Y" show-scrollbar="true">
 				<div class="bookRack" @click="tobook">
 					<div class="matter">
-						<i class="iconfont iconus"></i>
-						<span class="typeUser">游客</span>
+						<!-- <img src="../../static/imgs/user.png" alt=""> -->
+						<image :src="myinfo.avatarUrl?myinfo.avatarUrl:'../../static/imgs/user.png'"></image>
+						<span class="typeUser">{{myinfo.nickName?myinfo.nickName:'登录'}}</span>
 						<span class="userInfo">无线卡免费阅读.剩余1天</span>
 						<div class="feedBack">反馈</div>
 					</div>
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 				<div class="bookRacklist">
-					<image src="../../static/imgs/1.jpg" class="listImg"></image>
+					<image src="../../static/imgs/1.jpg" class="listImg" :class="{activeClass: 0 === navIndex}"></image>
 				</div>
 				<view class="y_tabbar_container">
 				    <Tabbar></Tabbar>
@@ -30,14 +31,33 @@
 </template>
 
 <script>
-	import Recommend from "../../components/recommend/recommend.vue"
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
-	export default {
+	import Recommend from "../../components/recommend/recommend.vue"
+	const app = getApp()
+	export default{
 		components:{
 			Searchbar,
 			Tabbar,
-			Recommend
+			Recommend,
+		},
+		data(){
+			return{
+				navList:[
+
+				],
+				navIndex:0,
+			  navId:0,
+				// myinfo:{}
+			}
+		},
+		mounted() {
+
+		},
+		computed:{
+			myinfo(){
+				return app.$vm.userInfo
+			}
 		},
 		methods:{
 			tobook(){
@@ -45,9 +65,14 @@
 					url:"/pages/bookpack/index"
 				})
 			},
-	  },
+			changeNavIndex(index,navId){
+				this.navIndex = index
+				this.navId = navId
+				console.log("this.navIndex")
+			}
+		}
 	}
- </script>
+</script>
 
 <style lang="stylus">
 	.indexContainer
@@ -89,10 +114,13 @@
 				.matter
 					display flex
 					padding-top 40upx
-					.iconfont
+					image
+						width: 40upx;
+						height: 40upx;
 						font-size 40upx
 						color white
 						margin-left 35upx
+						border-radius 50%
 					.typeUser
 						color white
 						font-size 23upx

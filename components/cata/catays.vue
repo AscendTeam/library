@@ -1,7 +1,7 @@
 <template>
 	<div class="cataListContent">
 		<scroll-view scroll-y="true" class="kkk">
-			<div class="strip" v-for="(item,index) in cataList.books" :key="index">
+			<div class="strip" v-for="(item,index) in cataList.books" :key="index" @click="toDetail">
 				<div class="car">{{item.searchIdx}}</div>
 				<image :src="item.bookInfo.cover" mode=""></image>
 				<div class="titleContent">
@@ -27,6 +27,13 @@
 		async mounted(){
 			this.cataList=await request('/getListYS')
 			console.log(this.cataList)
+		},
+		methods:{
+			toDetail(){
+				uni.navigateTo({
+					url:'/pages/books/index'
+				})
+			}
 		}
 	}
 </script>
@@ -38,8 +45,7 @@
 		.strip
 			display flex
 			margin 20upx 20upx
-			background-color #F1F1F1
-			border 1px solid #F1F1F1
+			background-color white
 			border-radius 10upx
 			height 280upx
 		.car

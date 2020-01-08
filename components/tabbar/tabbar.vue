@@ -6,6 +6,22 @@
 				v-for="(navItem,index) in navArr" :key="index">
 					{{navItem}}
 				</li>
+				<!-- <li class="y_detail_item_notice" :class="{detail_item_chiose:current===1}"
+					@click="goItem(1)">
+					分类
+				</li>
+				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===2}"
+					@click="goItem(2)">
+					排行
+				</li>
+				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===3}"
+					@click="goItem(3)">
+					科幻武侠
+				</li>
+				<li class="y_detail_item_suggestion" :class="{detail_item_chiose:current===4}"
+					@click="goItem(4)">
+					名著经典
+				</li> -->
 			</ul>
 		</div>
 
@@ -22,15 +38,15 @@
 			<swiper-item>
 				<Rank></Rank>
 			</swiper-item>
-			
 			<swiper-item>
-				<Rank></Rank>
+				<Youngs></Youngs>
 			</swiper-item>
-			
 			<swiper-item>
-				<Rank></Rank>
+				<Speech></Speech>
 			</swiper-item>
-			
+<!-- 			<swiper-item v-for="(item,index) in itemArr" :key="index">
+				<view class="swiper-item uni-bg-red">{{item}}</view>
+			</swiper-item> -->
 		</swiper>
 
 
@@ -41,16 +57,22 @@
 	import Recommend from '../recommend/recommend.vue'
 	import Category from '../category/category.vue'
 	import Rank from '../rank/rank.vue'
+	import Youngs from '../youngs/youngs.vue'
+	import Speech from '../speech/speech.vue'
 	export default{
 		components:{
 			Recommend,
 			Category,
-			Rank
+			Rank,
+			Youngs,
+			Speech
 		},
 		data(){
 			return{
+				choiceIndex:0,
 				duration:500,
-				navArr:["推荐","分类","排行","科幻武侠","名著经典"],
+				navArr:["推荐","分类","排行","青春言情","当代文学"],
+				// itemArr:["A","B","C","D","E"],
 				current:0
 			}
 		},
@@ -58,6 +80,7 @@
 		methods: {
 			changeItem(event){
 				this.current = event.target.current
+				// console.log(event)
 			},
 			goItem(index){
 				this.current = index
@@ -69,13 +92,17 @@
 
 <style lang="stylus">
 .y_tabbar_container
-	height 100%
 .y_nav_container
 	>ul
+		padding  0upx 40upx 20upx
+		width 670upx
 		display flex
+		flex-direction row
+		justify-content space-between
 		>li
-			font-size 36upx
-			padding 0 20upx
+			font-size 34upx
+			/*font-weight bold*/
+			// padding 0 20upx
 			color #999999
 			line-height 1.2em
 			display flex
@@ -83,10 +110,10 @@
 			align-items center
 			&.detail_item_chiose
 				font-weight bold
-				color #1B88EE
+				color black
 .swiper
-	height 2500rpx
+	height calc(100vh - 190upx)
 	swiper-item
 		width 100%
-		height 100%
+		//height 100%
 </style>
