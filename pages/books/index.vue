@@ -138,15 +138,10 @@
 						title
 					})
 					
-					// let index = this.bookcontent.bookId
-					// let obj = uni.getStorageSync('isCollected') 
-					// obj[index] = this.iscollection
-					// uni.setStorageSync({
-					// 	key: 'isCollected',
-					// 	data:obj,
-					// })
-
-					
+					let index = this.bookcontent.bookId
+					let obj = uni.getStorageSync('isCollected') ||{}
+					obj[index] = this.iscollection
+					uni.setStorageSync("isCollected",obj)
 				}
 			},
 

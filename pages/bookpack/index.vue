@@ -33,11 +33,11 @@
 <script>
 	const app = getApp()
 	export default{
-		
 		data(){
 			return{
 				userInfo:{},
-				isLogin:false
+				isLogin:false,
+				historyObj:{}
 			}
 		},
 		methods:{
@@ -50,21 +50,11 @@
 			},
 		},
 		mounted() {
+			this.historyObj = uni.getStorageSync('searchHistory_key') || {}
 			if(app.$vm.userInfo.nickName){
 				this.isLogin = true
 				this.userInfo = app.$vm.userInfo
 			}
-			
-			// uni.getUserInfo({
-			// 	success:(res)=> {
-			// 		this.userInfo = res.userInfo
-			// 		this.isLogin = true
-			// 		this.$bus.userInfo = this.userInfo
-			// 	},
-			// 	fail:()=> {
-			// 		console.log('失败')
-			// 	}
-			// })
 		}
 
 	}
