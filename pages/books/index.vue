@@ -6,14 +6,14 @@
 						<!-- 内容提要 -->
 						<div class="hBtop">
 							<image class="hAuthorImage" :src="bookInfo.cover"></image>
-							<div class='hDetail'>	
+							<div class='hDetail'>
 								<h1>{{bookInfo.title}}</h1>
-								<p class="hAuthor">{{bookInfo.author}}</p>				
+								<p class="hAuthor">{{bookInfo.author}}</p>
 								<div class='hItd' @click="moreItd=true">
 									<span>{{bookInfo.intro}}</span>
 									<i class="">></i>
 								</div>
-								
+
 							</div>
 						</div>
 						<!-- 点评数据 -->
@@ -96,7 +96,7 @@
 					设置
 				</div>
 				<button :class="iscollection ? 'noAdd' : 'add'"  @click="collection">{{iscollection ? "已加入书架" : "加入书架"}}</button>
-				
+
 			</div>
 		</view>
 </template>
@@ -137,11 +137,18 @@
 					uni.showToast({
 						title
 					})
-					
+
 					let index = this.bookcontent.bookId
-					let obj = uni.getStorageSync('isCollected') ||{}
-					obj[index] = this.iscollection
-					uni.setStorageSync("isCollected",obj)
+					let collected = uni.getStorageSync('isCollected') ||[]
+					if(collected.indexOf(index) !== -1){
+						collected = collected.filter((val,idx,arr)=>{
+							console.log(val, idx, arr, index)
+							return val !== index
+						})
+					}else{
+						collected.push(index);
+					}
+					uni.setStorageSync("isCollected",collected);
 				}
 			},
 
@@ -151,6 +158,10 @@
 			this.bookInfo= this.bList
 			this.bookcontent = this.requestData.data.chapterContent
 			this.bookToke = this.requestData.data.reviewList.items[0]
+
+			//读取书架状态
+			this.iscollection =
+				(uni.getStorageSync('isCollected') || []).indexOf(this.bookcontent.bookId) !== -1
 		}
 	}
 </script>
@@ -236,7 +247,7 @@
 	// 			color #0D1218
 	// 			position absolute
 	// 			left 280upx
-	// 			bottom -200upx	
+	// 			bottom -200upx
 	// 			color #FFFFFF
 	// 			font-size 50upx
 	// 			line-height 100upx
@@ -285,7 +296,7 @@
 					color #0D1218
 					position absolute
 					left 280upx
-					bottom -200upx	
+					bottom -200upx
 					color #FFFFFF
 					font-size 50upx
 					line-height 100upx
@@ -296,15 +307,15 @@
 				height 100%
 				top 0
 				left 0
-				background-color rgba(0,0,0,.2)			
+				background-color rgba(0,0,0,.2)
 		.hElt
-			margin 46upx 0  
+			margin 46upx 0
 			position relative
 			div
 				display: inline-block;
 				width 330upx
 				font-size 20upx
-			
+
 				.hScore
 					font-size 40upx
 					color #6F7A80
@@ -426,8 +437,8 @@
 			line-height 60upx
 			color #999999
 			background #C8C7CC
-					
-					
-				
-			
+
+
+
+
 </style>

@@ -12,7 +12,7 @@
 						<div class="feedBack">反馈</div>
 					</div>
 					<div class="showBook">
-						<image src="../../static/imgs/3.jpg"  class="bookName" ></image>
+						<image v-for="item in collectedBooks" v-bind:src="item.cover" class="bookName"></image>
 					</div>
 					<div class="bookUp">
 						<span class="w-name">书架</span>
@@ -34,7 +34,10 @@
 	import Searchbar from '../../components/searchbar/searchbar.vue'
 	import Tabbar from '../../components/tabbar/tabbar.vue'
 	import Recommend from "../../components/recommend/recommend.vue"
+	import request from '../../utils/request.js'
+
 	const app = getApp()
+
 	export default{
 		components:{
 			Searchbar,
@@ -48,6 +51,7 @@
 				],
 				navIndex:0,
 			  navId:0,
+			  collectedBooks: []
 				// myinfo:{}
 			}
 		},
