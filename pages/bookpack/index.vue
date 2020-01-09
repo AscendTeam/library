@@ -21,17 +21,13 @@
 			</div>
 		</div>
 		<div class="book">
-			<div class="bookItem">
-					<img :src="bookInfo.coverr">
-					<span>{{bookInfo.title}}</span>
-			</div>
-			<div class="bookItem">
-					<img :src="bookInfo.coverr">
-					<span>{{bookInfo.title}}</span>
-			</div>
+				<div class="bookItem" v-for="(item, idx) in collectedBooks" :key="idx">
+						<img v-bind:src="item.cover">
+						<span>{{item.title}}</span>
+				</div>
 
-			<div class="addBook">
-				<div class="add" @click="toAllBook">
+			<div class="addBook" >
+				<div class="add" @click="toIndex">
 					十
 				</div>
 			</div>
@@ -41,13 +37,33 @@
 
 <script>
 	const app = getApp()
-	import require from '../../utils/request.js'
+	import request from '../../utils/request.js'
+	
 	export default{
 		data(){
 			return{
 				userInfo:{},
-				isLogin:false
+				isLogin:false,
+				collectedBooks: []
 			}
+		},
+		onShow() {
+			this.collectedBooks = [];
+			
+			let collected = uni.getStorageSync('isCollected')|| [];
+			console.log(collected, 'bookpack');
+			
+			collected.forEach((item, index)=>{
+				//get book detail
+					request('/detail?id='+item).then(data=>{
+						console.log(data, 'response');
+							this.collectedBooks.push(data);
+			
+						console.log(this.collectedBooks);
+					}, err=>{
+						console.log(err);
+					})
+			})
 		},
 		methods:{
 			getuserinfo(res){
@@ -57,9 +73,9 @@
 				this.isLogin = true
 				this.$bus.$emit("getUser",this.userInfo)
 			},
-			toAllBook(){
-				uni.navigateTo({
-					url:"/pages/index/index"
+			toIndex(){
+				uni.redirectTo({
+					url:"../index/index"
 				})
 			}
 		},
@@ -149,11 +165,16 @@
 			padding-top: 70upx;
 			display flex
 			flex-direction row
-			justify-content space-between
 			.bookItem
 				width: 188upx;
 				height: 272upx;
 				border 2upx solid #DEE0E2
+				margin-right 30upx
+				img
+					width 188upx
+					height 100%
+				span
+					font-size 30upx
 			.addBook
 				width: 188upx;
 				height: 272upx;

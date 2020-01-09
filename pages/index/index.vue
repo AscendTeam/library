@@ -51,8 +51,26 @@
 				// myinfo:{}
 			}
 		},
+		onShow() {
+			this.collectedBooks = [];
+			
+			let collected = uni.getStorageSync('isCollected')|| [];
+			console.log(collected);
+			
+			collected.forEach((item, index)=>{
+				//get book detail
+					request('/detail?id='+item).then(data=>{
+						console.log(data, 'response');
+							this.collectedBooks.push(data);
+			
+						console.log(this.collectedBooks);
+					}, err=>{
+						console.log(err);
+					})
+			
+			})
+		},
 		mounted() {
-
 		},
 		computed:{
 			myinfo(){
